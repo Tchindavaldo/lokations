@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "896853712051",
+    "project_id": "lokations-11b5b",
+    "storage_bucket": "lokations-11b5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896853712051:android:ec14d5760301956027a4c6",
+        "android_client_info": {
+          "package_name": "com.example.lokations"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc9CGEXfSIiNhyHuNZFqAXz3JcAszIIGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

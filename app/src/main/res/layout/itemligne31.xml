@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="7dp"
+    android:paddingLeft="7dp"
+    >
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:cardCornerRadius="13dp"
+
+
+            app:layout_constraintLeft_toLeftOf="parent">
+
+
+            <ImageView
+
+                android:id="@+id/imageItem"
+                android:layout_width="80dp"
+                android:layout_height="75dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/m88"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/containerNomCatItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/NomCategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="cité Mandela"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="bold"
+
+
+                app:circularflow_radiusInDP="30dp"
+                app:layout_constraintTop_toTopOf="@id/card2item2Ligne2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text=", "
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ville"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="yaoundé"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="bold"
+
+
+                app:circularflow_radiusInDP="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:text="Note"
+
+
+                    android:textColor="@color/black_70"
+
+                    android:textSize="10sp"
+                    app:circularflow_radiusInDP="30dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+
+                    android:text="60"
+                    android:textColor="#FFE082"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="/100 "
+                    android:textColor="@color/black_50"
+                    android:textSize="10sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="5dp"
+                    android:text="Qualite"
+                    android:textColor="@color/black_70"
+
+
+                    android:textSize="10sp"
+                    app:circularflow_radiusInDP="30dp"
+
+
+                    app:layout_constraintBottom_toTopOf="@id/text1item1Ligne3"
+                    app:layout_constraintLeft_toRightOf="@id/card1Item1Ligne3"
+                    app:layout_constraintTop_toBottomOf="@id/text3item1Ligne3" />
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="3dp"
+                    android:src="@drawable/fv" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="4.5"
+                    android:textColor="@color/black"
+
+
+                    android:textSize="10sp"
+                    app:circularflow_radiusInDP="30dp"
+
+
+                    app:layout_constraintBottom_toTopOf="@id/text1item1Ligne3"
+                    app:layout_constraintLeft_toRightOf="@id/card1Item1Ligne3"
+                    app:layout_constraintTop_toBottomOf="@id/text3item1Ligne3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="8dp"
+                    android:text="Prix:"
+                    android:textColor="@color/black_70"
+
+                    android:textSize="10sp"
+                    app:circularflow_radiusInDP="30dp"
+
+
+                    app:layout_constraintBottom_toTopOf="@id/text2item1Ligne3"
+                    app:layout_constraintLeft_toRightOf="@id/card1Item1Ligne3"
+                    app:layout_constraintTop_toBottomOf="@id/text4item1Ligne3" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/prix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="222 000"
+                android:textColor="@color/black"
+
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=" /"
+
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/periodePaye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Mois"
+
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="1dp"
+
+                android:layout_weight="1"
+                android:text="Fin de construction"
+                android:textColor="@color/black_70"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/text1item1Ligne3"
+                android:layout_alignParentRight="true"
+                android:text="03 - 04 - 2025"
+                android:textColor="@color/black"
+
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="5dp"
+                android:text="2"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text=" chambres "
+                android:textColor="@color/black_70"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="3dp"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="salon"
+                android:textColor="@color/black_70"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="4dp"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="Douche"
+                android:textColor="@color/black_70"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="3dp"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="Cuisine"
+                android:textColor="@color/black_70"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@+id/statut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="5dp"
+                android:text="Actuellement disponible"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </LinearLayout>

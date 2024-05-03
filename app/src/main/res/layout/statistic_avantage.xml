@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+
+
+        <!-- TODO: Update blank fragment layout
+                        <androidx.cardview.widget.CardView
+                        android:id="@+id/cardContainer1"
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+
+
+                        app:cardCornerRadius="45dp"
+                        app:cardBackgroundColor="#00000000"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginBottom="10dp"
+
+                        app:layout_constraintLeft_toLeftOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/detail1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:paddingTop="20dp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardInterieur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="0dp"
+
+                                app:cardCornerRadius="13dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <TextView
+                                    android:id="@+id/interieur"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#DE25121F"
+                                    android:paddingLeft="5dp"
+
+
+                                    android:paddingTop="5dp"
+                                    android:paddingRight="5dp"
+                                    android:text="INTERIEUR"
+
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:circularflow_radiusInDP="30dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                android:id="@+id/doucheInt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:paddingLeft="15dp"
+
+                                android:paddingTop="15dp"
+
+
+                                android:paddingRight="5dp"
+                                android:text="dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin cuisine le solest coreler les murs paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin "
+                                android:textColor="#B3FFFFFF"
+                                android:textSize="13sp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cardInterieur" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                    </androidx.cardview.widget.CardView>
+    -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardimgchambre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+
+
+                android:layout_marginTop="55dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#DE25121F"
+                    android:padding="9dp"
+                    android:text="next"
+                    android:textColor="@color/white"
+
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/container_detail"
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="#CC000000"
+                app:cardCornerRadius="25dp"
+
+                app:layout_constraintBottom_toTopOf="@id/container_item_nav"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/top_nav_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/louer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+
+                            android:text="Details"
+
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/reserver"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="80dp"
+                            android:layout_height="2dp"
+
+                            android:layout_marginTop="4dp"
+                            android:background="#FFFFFF"
+                            app:layout_constraintLeft_toLeftOf="@id/louer"
+                            app:layout_constraintRight_toRightOf="@id/louer"
+                            app:layout_constraintTop_toBottomOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/reserver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Avantages"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/louer"
+                            app:layout_constraintRight_toLeftOf="@id/detail3"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/detail3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Inconvenient"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/reserver"
+                            app:layout_constraintRight_toLeftOf="@id/detail4"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/detail4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="contact"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/detail3"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+
+                        app:layout_constraintTop_toBottomOf="@id/top_nav_detail"
+                        >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="35dp"
+
+                            android:gravity="center_vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_baseline_shopping_bag_24"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="25dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+
+                                    android:text="avantages"
+                                    android:textColor="#E6FFFFFF"
+                                    android:textSize="14sp"
+
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="0dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/descript_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+
+                                android:gravity="left"
+                                android:paddingRight="5dp"
+
+
+                                android:text="paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin wifi cable canalsat  "
+                                android:textColor="#B3FFFFFF"
+                                android:textSize="13sp"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <LinearLayout
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+
+                                android:layout_alignBottom="@+id/descript_text"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="45dp"
+
+                            android:gravity="center_vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+
+                                    app:cardCornerRadius="55dp">
+
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/m88"
+
+                                        />
+
+
+                                </androidx.cardview.widget.CardView>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="25dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+
+                                    android:text="Inconvenient "
+                                    android:textColor="#E6FFFFFF"
+                                    android:textSize="14sp"
+
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="0dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/descript_text2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+
+                                android:gravity="left"
+                                android:paddingRight="5dp"
+
+
+                                android:text="paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin wifi cable canalsat  "
+                                android:textColor="#B3FFFFFF"
+                                android:textSize="13sp"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <LinearLayout
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+
+                                android:layout_alignBottom="@+id/descript_text2"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="45dp"
+
+                            android:gravity="center_vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/img_notif"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m88"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/infos_notif"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="25dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+
+                                    android:text="Notre avis "
+                                    android:textColor="#E6FFFFFF"
+                                    android:textSize="14sp"
+
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="0dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/descript_text3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+
+                                android:gravity="left"
+                                android:paddingRight="5dp"
+
+
+                                android:text="paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin wifi cable canalsat  "
+                                android:textColor="#B3FFFFFF"
+                                android:textSize="13sp"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <LinearLayout
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+
+                                android:layout_alignBottom="@+id/descript_text3"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <LinearLayout
+                        android:id="@+id/bottom_lpr"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reserver"
+
+                            android:textColor="@color/white" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="200 000/Ans"
+                            android:textColor="@color/white"
+
+
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="50dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Louer"
+
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/container_item_nav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="5dp"
+
+                android:background="@drawable/round_black"
+
+                android:elevation="100dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+
+                android:paddingBottom="10dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                >
+
+
+                <LinearLayout
+                    android:id="@+id/button_detail_infos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:background="@drawable/round_item_nav_detail"
+                    android:gravity="center"
+                    android:padding="8dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/button_detail_photo"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/autreCité1"
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pps">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/button_detail_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/round_item_selected_nav_detail"
+                    android:gravity="center"
+                    android:padding="8dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/button_detail_infos"
+                    app:layout_constraintRight_toLeftOf="@id/button_detail_comment"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/photo">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/round_item_nav_detail"
+                    android:gravity="center"
+                    android:padding="8dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                    app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/comment">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/round_item_nav_detail"
+                    android:gravity="center"
+                    android:padding="8dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                    app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/comment">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/cardAutreCité6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/round_item_nav_detail"
+                    android:gravity="center"
+                    android:padding="8dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/button_detail_comment"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/plce">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

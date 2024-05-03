@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC25121F">
+    <!--
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dtv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgBackgrounChambre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/m6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                </ImageView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:background="#25121F"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardimgchambre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:layout_marginBottom="52dp"
+                    android:elevation="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@drawable/round45"
+                        android:elevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <TextView
+                            android:id="@+id/louer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+
+                            android:text="Dimension"
+
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/reserver"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="80dp"
+                            android:layout_height="2dp"
+
+                            android:layout_marginTop="4dp"
+                            android:background="#FFFFFF"
+                            app:layout_constraintLeft_toLeftOf="@id/louer"
+                            app:layout_constraintRight_toRightOf="@id/louer"
+                            app:layout_constraintTop_toBottomOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/reserver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Positif"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/louer"
+                            app:layout_constraintRight_toLeftOf="@id/detail3"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/detail3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Negatif"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/reserver"
+                            app:layout_constraintRight_toLeftOf="@id/detail4"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/detail4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="detai4"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/detail3"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/containerIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="40dp"
+
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/louer">
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cardAutreCité1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                app:cardCornerRadius="20dp"
+                                android:padding="5dp"
+
+                                android:background="@drawable/round"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="@+id/icon2"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/imgLch"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/pps"
+                                    app:layout_constraintBottom_toTopOf="@id/Lch"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/Lch"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="1dp"
+                                    android:text="Longueur Chambre"
+                                    android:textColor="#B3FFFFFF"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold"
+
+                                    android:gravity="center_horizontal"
+                                    app:circularflow_radiusInDP="30dp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/imgLch" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/icon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                app:cardCornerRadius="18dp"
+                                android:background="@drawable/round"
+                                android:padding="5dp"
+
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/cardAutreCité1"
+                                app:layout_constraintRight_toLeftOf="@id/icon3"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <ImageView
+                                    android:id="@+id/imglch"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/prix"
+                                    app:layout_constraintBottom_toTopOf="@id/lch"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/lch"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="1dp"
+                                    android:text="Largeur chambre"
+                                    android:textColor="#B3FFFFFF"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold"
+
+                                    android:gravity="center_horizontal"
+
+                                    app:circularflow_radiusInDP="30dp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/imglch" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/icon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:background="@drawable/round"
+                                app:cardCornerRadius="18dp"
+                                android:padding="5dp"
+
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/icon2"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <ImageView
+
+                                    android:id="@+id/imgHch"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerCrop"
+
+                                    android:src="@drawable/photo"
+                                    app:layout_constraintBottom_toTopOf="@id/hCh"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="parent">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/hCh"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="1dp"
+                                    android:text="hauteur chambre"
+                                    android:textColor="#B3FFFFFF"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"
+
+                                    app:circularflow_radiusInDP="30dp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/imgHch" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/containerIcon2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="30dp"
+
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/containerIcon">
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cardAutreCité1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                app:cardCornerRadius="20dp"
+                                android:padding="5dp"
+
+                                android:background="@drawable/round"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="@+id/icon2"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/imgLch"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/pps"
+                                    app:layout_constraintBottom_toTopOf="@id/Lch"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/Lch"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="1dp"
+                                    android:text="Longueur Chambre"
+                                    android:textColor="#B3FFFFFF"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold"
+
+                                    android:gravity="center_horizontal"
+                                    app:circularflow_radiusInDP="30dp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/imgLch" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/icon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                app:cardCornerRadius="18dp"
+                                android:background="@drawable/round"
+                                android:padding="5dp"
+
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/cardAutreCité1"
+                                app:layout_constraintRight_toLeftOf="@id/icon3"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <ImageView
+                                    android:id="@+id/imglch"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/prix"
+                                    app:layout_constraintBottom_toTopOf="@id/lch"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/lch"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="1dp"
+                                    android:text="Largeur chambre"
+                                    android:textColor="#B3FFFFFF"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold"
+
+                                    android:gravity="center_horizontal"
+
+                                    app:circularflow_radiusInDP="30dp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/imglch" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/icon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:background="@drawable/round"
+                                app:cardCornerRadius="18dp"
+                                android:padding="5dp"
+
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/icon2"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <ImageView
+
+                                    android:id="@+id/imgHch"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerCrop"
+
+                                    android:src="@drawable/photo"
+                                    app:layout_constraintBottom_toTopOf="@id/hCh"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="parent">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/hCh"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="1dp"
+                                    android:text="hauteur chambre"
+                                    android:textColor="#B3FFFFFF"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"
+
+                                    app:circularflow_radiusInDP="30dp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/imgHch" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.cardview.widget.CardView
+
+                        android:id="@+id/cardView"
+                        android:layout_width="match_parent"
+
+
+                        android:layout_height="match_parent"
+
+                        android:background="@drawable/round45"
+                        app:cardBackgroundColor="@drawable/round45"
+                        app:cardCornerRadius="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintCircleRadius="70dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+                            android:id="@+id/imgchambre"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/m6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                        </ImageView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/next"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="55dp"
+
+
+                            android:layout_marginTop="55dp"
+                            app:cardCornerRadius="15dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#DE25121F"
+                                android:padding="9dp"
+                                android:text="next"
+                                android:textColor="@color/white"
+
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/nnchmbre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginTop="5dp"
+
+
+                            android:layout_marginBottom="5dp"
+                            app:cardCornerRadius="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#C8020101"
+                                android:padding="5dp"
+                                android:text="chmbre 2"
+                                android:textColor="@color/white"
+
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/autreCité"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardimgchambre">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardAutreCité1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:cardCornerRadius="20dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/cardAutreCité3"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/autreCité1"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pps"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </ImageView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.cardview.widget.CardView
+
+                        android:id="@+id/cardAutreCité3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:cardCornerRadius="18dp"
+
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/cardAutreCité1"
+                        app:layout_constraintRight_toLeftOf="@id/cardAutreCité4"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/prix"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </ImageView>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardAutreCité4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/round3"
+                        android:padding="10dp"
+
+                        app:cardCornerRadius="18dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/cardAutreCité3"
+                        app:layout_constraintRight_toLeftOf="@id/cardAutreCité5"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/photo"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                        </ImageView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardAutreCité5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:cardCornerRadius="18dp"
+
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/cardAutreCité4"
+                        app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/comment"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                        </ImageView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardAutreCité6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:cardCornerRadius="18dp"
+
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/cardAutreCité5"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/plce"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                        </ImageView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
+    </androidx.constraintlayout.widget.ConstraintLayout>

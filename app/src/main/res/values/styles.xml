@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="noBar"
+    parent="@android:style/Theme.Translucent.NoTitleBar">
+
+</style>
+    <style name="size" parent="TextAppearance.Design.Tab" >
+ <item name="android:textSize">9sp</item>
+ </style>
+
+
+    <style name="item_periode_selected" parent="TextAppearance.Design.Tab" >
+ <item name="android:textSize">10sp</item>
+ <item name="android:textAllCaps">true</item>
+ <item name="android:textStyle">bold</item>
+ </style>
+
+    <style name="item_periode_unSelected" parent="TextAppearance.Design.Tab" >
+ <item name="android:textSize">9sp</item>
+ </style>
+
+    <style name="item_chambre_selected" parent="TextAppearance.Design.Tab" >
+ <item name="android:textSize">10sp</item>
+ <item name="android:textAllCaps">false</item>
+ <item name="android:textStyle">normal</item>
+ </style>
+
+    <style name="item_chambre_unSelected" parent="TextAppearance.Design.Tab" >
+ <item name="android:textSize">10sp</item>
+ <item name="android:textAllCaps">false</item>
+ <item name="android:textStyle">normal</item>
+ </style>
+
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+
+        <item name="android:layout_width">23dp</item>
+        <item name="android:layout_height">23dp</item>
+    </style>
+
+
+</resources>

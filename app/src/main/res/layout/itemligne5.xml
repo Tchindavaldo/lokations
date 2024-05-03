@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="7dp"
+    android:layout_marginEnd="5dp"
+    android:orientation="vertical"
+
+    >
+
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/carditem2Ligne1"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+
+
+            app:cardCornerRadius="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/round_black_50_30"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:paddingStart="4dp"
+            android:paddingTop="1dp"
+            android:paddingEnd="3dp"
+            android:paddingBottom="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="6"
+                android:textColor="#FFE082"
+                android:textSize="8sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text=" /10"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+
+                android:id="@+id/ImgItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/m88"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:elevation="5dp"
+
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/round_black"
+
+>
+
+                <TextView
+                    android:id="@+id/prix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="235 000"
+
+
+
+                    android:gravity="center_vertical"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" /"
+
+
+
+                    android:gravity="center_vertical"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/periodePaye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center_vertical"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    android:text="Mois" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bottom_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+
+                android:elevation="5dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginBottom="1dp"
+
+                    android:background="@drawable/round_black"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
+
+
+                    android:paddingRight="5dp"
+
+                    android:paddingBottom="3dp"
+                    android:text="1 Salon"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+
+                    android:visibility="visible"
+                    app:layout_constraintRight_toLeftOf="@id/label_prix"
+                    app:layout_constraintTop_toBottomOf="@id/label_Itemcategorie" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginBottom="1dp"
+
+                    android:background="@drawable/round_black"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
+
+
+                    android:paddingRight="5dp"
+
+                    android:paddingBottom="3dp"
+                    android:text="1 Douche"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+
+                    android:visibility="visible"
+                    app:layout_constraintRight_toLeftOf="@id/label_prix"
+                    app:layout_constraintTop_toBottomOf="@id/label_Itemcategorie" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_black"
+
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+
+
+                    android:layout_marginBottom="1dp"
+                    android:elevation="10dp">
+
+                    <TextView
+                        android:id="@+id/nbChambre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="8sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/labelChambre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" chambre"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="8sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/statut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Actuellement disponible"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="8sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_black"
+
+                android:layout_marginBottom="1dp"
+
+                android:paddingTop="4dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+
+                >
+
+
+                    <TextView
+                        android:id="@+id/nomCategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maison"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/separateurCatItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:autoText="false"
+                        android:text=","
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/itemCategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="chambre3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:gravity="bottom">
+
+        <ImageView
+            android:id="@+id/icoLieux"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/plce" />
+
+        <TextView
+            android:id="@+id/ville"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:text="bastos"
+            android:textColor="@color/black"
+            android:textSize="9sp" />
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/round_black_50_30" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/round_black_15" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/round_black_50_30" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/round_black_50_30" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

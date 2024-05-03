@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC25121F">
+<!--
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/dtv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgBackgrounChambre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/m6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </ImageView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:background="#25121F"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardimgchambre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:layout_marginBottom="52dp"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+                <androidx.cardview.widget.CardView
+
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="match_parent"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgchambre"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/m6"
+
+                        android:layout_marginTop="52dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                    </ImageView>
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:background="#80000000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.493"
+                        tools:layout_editor_absoluteX="0dp">
+
+
+                        <androidx.cardview.widget.CardView
+
+                            android:id="@+id/cardimgchambre"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="5dp"
+                            app:cardCornerRadius="18dp"
+
+                            app:layout_constraintLeft_toLeftOf="@id/duré"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <ImageView
+                                android:id="@+id/imgchambre"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/m6"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                            </ImageView>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/nncite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9dp"
+
+                            android:text="cité  hypocrate"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@id/cardimgchambre"
+                            app:layout_constraintTop_toTopOf="@id/cardimgchambre" />
+
+                        <TextView
+                            android:id="@+id/nchambre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginBottom="2dp"
+
+
+                            android:text="chambre 3"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:circularflow_radiusInDP="30dp"
+
+                            app:layout_constraintBottom_toTopOf="@id/prixchambre"
+                            app:layout_constraintLeft_toRightOf="@id/cardimgchambre" />
+
+                        <TextView
+                            android:id="@+id/prixchambre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginBottom="2dp"
+
+
+                            android:text="300 000/ans"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:circularflow_radiusInDP="30dp"
+                            app:layout_constraintBottom_toTopOf="@id/iconimg"
+                            app:layout_constraintLeft_toRightOf="@id/cardimgchambre" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/iconimg"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginRight="9dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardimgchambre"
+                            app:layout_constraintLeft_toRightOf="@id/cardimgchambre">
+
+
+                            <ImageView
+                                android:id="@+id/comment"
+                                android:layout_width="10dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/comment"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/like"
+                                android:layout_width="10dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/like"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/comment"
+                                app:layout_constraintRight_toLeftOf="@+id/disLike"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/disLike"
+                                android:layout_width="10dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/klity"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/like"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/fav"
+                                android:layout_width="10dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/fv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/disLike">
+
+                            </ImageView>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/louer"
+                            android:layout_width="30dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="40dp"
+
+                            android:text="louer"
+
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/reserver"
+                            app:layout_constraintTop_toBottomOf="@+id/cardimgchambre" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="50dp"
+                            android:layout_height="1dp"
+
+                            android:layout_marginTop="4dp"
+                            android:background="@color/white"
+                            app:layout_constraintLeft_toLeftOf="@id/louer"
+                            app:layout_constraintRight_toRightOf="@id/louer"
+                            app:layout_constraintTop_toBottomOf="@id/louer" />
+
+                        <TextView
+                            android:id="@+id/reserver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="reserver"
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="16sp"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/louer"
+                            app:layout_constraintLeft_toRightOf="@id/louer"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/louer" />
+
+
+                        <TextView
+                            android:id="@+id/duré"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="60dp"
+                            android:text="dure de l'occation"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+
+                            app:circularflow_radiusInDP="30dp"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/edure"
+                            app:layout_constraintTop_toBottomOf="@id/louer" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/edure"
+                            android:layout_width="200dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/round"
+                            app:layout_constraintBottom_toBottomOf="@id/duré"
+                            app:layout_constraintLeft_toRightOf="@+id/duré"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/duré">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/serch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#00FFFFFF"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/debutLoccation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="40dp"
+                            android:text="debut de l'occation"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+
+                            app:circularflow_radiusInDP="30dp"
+
+                            app:layout_constraintLeft_toLeftOf="@id/duré"
+                            app:layout_constraintTop_toBottomOf="@+id/duré" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/edebutLoccation"
+                            android:layout_width="200dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/round"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/debutLoccation"
+
+                            app:layout_constraintLeft_toRightOf="@+id/duré"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/debutLoccation">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/serch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#00FFFFFF"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/finLccation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="40dp"
+                            android:text="fin de l'occation"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+
+                            app:circularflow_radiusInDP="30dp"
+
+                            app:layout_constraintLeft_toLeftOf="@id/duré"
+                            app:layout_constraintTop_toBottomOf="@+id/debutLoccation" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/efinLccation"
+                            android:layout_width="200dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/round"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/finLccation"
+
+                            app:layout_constraintLeft_toRightOf="@+id/duré"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/finLccation">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/serch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#00FFFFFF"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/modePayement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="40dp"
+                            android:text="mode de payement"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+
+                            app:circularflow_radiusInDP="30dp"
+
+                            app:layout_constraintLeft_toLeftOf="@id/duré"
+                            app:layout_constraintTop_toBottomOf="@+id/finLccation" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/emodepayement"
+                            android:layout_width="200dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/round"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/modePayement"
+
+                            app:layout_constraintLeft_toRightOf="@+id/duré"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/modePayement">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/serch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#00FFFFFF"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/numero"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="40dp"
+                            android:text="numero de dbit"
+                            android:textColor="#FFFFFF"
+
+                            android:textSize="16sp"
+
+                            app:circularflow_radiusInDP="30dp"
+                            app:layout_constraintLeft_toLeftOf="@id/duré"
+                            app:layout_constraintTop_toBottomOf="@id/modePayement" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/enumerodebit"
+                            android:layout_width="200dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/round"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/numero"
+                            app:layout_constraintLeft_toRightOf="@+id/duré"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/numero">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:id="@+id/serch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#00FFFFFF"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginBottom="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="@id/numero"
+                            app:layout_constraintRight_toRightOf="@id/enumerodebit"
+                            app:layout_constraintTop_toBottomOf="@id/numero">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/round2"
+
+                                android:padding="15dp"
+                                android:text="louer"
+                                android:textColor="#B3FFFFFF"
+
+
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <LinearLayout
+                        android:id="@+id/container_item_nav"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginBottom="5dp"
+
+                        android:elevation="100dp"
+
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+
+                        android:orientation="horizontal"
+                        android:gravity="center"
+
+                        android:background="@drawable/round_black"
+
+
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+
+                        >
+
+
+                        <LinearLayout
+                            android:id="@+id/button_detail_infos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:background="@drawable/round_item_nav_detail"
+                            android:gravity="center"
+                            android:padding="8dp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/button_detail_photo"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/autreCité1"
+                                android:layout_width="13dp"
+                                android:layout_height="15dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/pps"
+                                >
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/button_detail_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/round_item_selected_nav_detail"
+                            android:gravity="center"
+                            android:padding="8dp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/button_detail_infos"
+                            app:layout_constraintRight_toLeftOf="@id/button_detail_comment"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <ImageView
+
+                                android:layout_width="13dp"
+                                android:layout_height="15dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/photo"
+                                >
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/button_detail_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/round_item_nav_detail"
+                            android:gravity="center"
+                            android:padding="8dp"
+
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                            app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <ImageView
+
+                                android:layout_width="13dp"
+                                android:layout_height="15dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/comment">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/button_detail_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/round_item_nav_detail"
+                            android:gravity="center"
+                            android:padding="8dp"
+
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                            app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <ImageView
+
+                                android:layout_width="13dp"
+                                android:layout_height="15dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/comment">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/cardAutreCité6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/round_item_nav_detail"
+                            android:gravity="center"
+                            android:padding="8dp"
+
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/button_detail_comment"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <ImageView
+
+                                android:layout_width="13dp"
+                                android:layout_height="15dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/plce"
+                                >
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+
+
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/autreCité"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardimgchambre">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardAutreCité1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:cardCornerRadius="20dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/cardAutreCité3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/autreCité1"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pps"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.cardview.widget.CardView
+
+                    android:id="@+id/cardAutreCité3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:cardCornerRadius="18dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/cardAutreCité1"
+                    app:layout_constraintRight_toLeftOf="@id/cardAutreCité4"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/prix"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardAutreCité4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/round3"
+                    android:padding="10dp"
+
+                    app:cardCornerRadius="18dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/cardAutreCité3"
+                    app:layout_constraintRight_toLeftOf="@id/cardAutreCité5"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/photo"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    </ImageView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardAutreCité5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:cardCornerRadius="18dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/cardAutreCité4"
+                    app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/comment"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    </ImageView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardAutreCité6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:cardCornerRadius="18dp"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/cardAutreCité5"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/plce"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    </ImageView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    -->
+</androidx.constraintlayout.widget.ConstraintLayout>

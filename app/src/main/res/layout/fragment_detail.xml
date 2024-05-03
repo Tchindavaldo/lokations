@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:id="@+id/cardimgchambre"
+    tools:context=".fragment_detail">
+
+    <!-- TODO: Update blank fragment layout
+                    <androidx.cardview.widget.CardView
+                    android:id="@+id/cardContainer1"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+
+
+                    app:cardCornerRadius="45dp"
+                    app:cardBackgroundColor="#00000000"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="10dp"
+
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/detail1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:paddingTop="20dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardInterieur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="0dp"
+
+                            app:cardCornerRadius="13dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <TextView
+                                android:id="@+id/interieur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#DE25121F"
+                                android:paddingLeft="5dp"
+
+
+                                android:paddingTop="5dp"
+                                android:paddingRight="5dp"
+                                android:text="INTERIEUR"
+
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:circularflow_radiusInDP="30dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+                            android:id="@+id/doucheInt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:paddingLeft="15dp"
+
+                            android:paddingTop="15dp"
+
+
+                            android:paddingRight="5dp"
+                            android:text="dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin cuisine le solest coreler les murs paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin "
+                            android:textColor="#B3FFFFFF"
+                            android:textSize="13sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardInterieur" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="#F9F2FC"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="5dp"
+
+            android:layout_marginBottom="56dp"
+            app:cardCornerRadius="25dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="0dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="25dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    app:cardBackgroundColor="#80FFFFFF"
+                    app:cardCornerRadius="55dp">
+
+
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/m6"
+
+                        />
+
+
+
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingBottom="2dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+
+
+                        android:text="Cité Hypocrate"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+
+                        android:textStyle="bold"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Baganté"
+
+                        android:textColor="@color/black_50"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+
+                        app:layout_constraintHorizontal_weight="0.6" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chambre10,  260 000/Ans"
+
+                        android:textColor="@color/black_50"
+                        android:textSize="10sp"
+                        android:layout_marginBottom="5dp"
+
+                        app:layout_constraintHorizontal_weight="0.2" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="bottom"
+                        android:text="Caracteristique"
+                        android:textColor="@color/black_70"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+
+
+                        android:background="@drawable/round_black_10_10"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="8dp"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+              >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top_nav_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/louer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+
+                        android:text="Details"
+
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/reserver"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="80dp"
+                        android:layout_height="2dp"
+
+                        android:layout_marginTop="4dp"
+                        android:background="@color/black"
+                        app:layout_constraintLeft_toLeftOf="@id/louer"
+                        app:layout_constraintRight_toRightOf="@id/louer"
+                        app:layout_constraintTop_toBottomOf="@id/louer" />
+
+                    <TextView
+                        android:id="@+id/reserver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Avantages"
+                        android:textColor="@color/black_50"
+                        android:textSize="16sp"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/louer"
+                        app:layout_constraintLeft_toRightOf="@id/louer"
+                        app:layout_constraintRight_toLeftOf="@id/detail3"
+                        app:layout_constraintTop_toTopOf="@id/louer" />
+
+                    <TextView
+                        android:id="@+id/detail3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Inconvenient"
+                        android:textColor="@color/black_50"
+                        android:textSize="16sp"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/louer"
+                        app:layout_constraintLeft_toRightOf="@id/reserver"
+                        app:layout_constraintRight_toLeftOf="@id/detail4"
+                        app:layout_constraintTop_toTopOf="@id/louer" />
+
+                    <TextView
+                        android:id="@+id/detail4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="contact"
+                        android:textColor="@color/black_50"
+                        android:textSize="16sp"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/louer"
+                        app:layout_constraintLeft_toRightOf="@id/detail3"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/louer" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/top_nav_detail"
+                        tools:layout_editor_absoluteX="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp">
+
+                            <TextView
+                                android:id="@+id/Itemcategorie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="Chambre"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/item3_item2_page_boutique"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp">
+
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="50dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Longueur"
+                                    android:textColor="@color/black_70" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2.5m"
+                                    android:textColor="@color/black_50" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Largeur"
+                                    android:textColor="@color/black_70" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.8m"
+                                    android:textColor="@color/black_50" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hauteur"
+                                    android:textColor="@color/black_70" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.94m"
+                                    android:textColor="@color/black_50" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="35dp"
+                            android:text="Description"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/descript_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+
+                                android:gravity="left"
+                                android:paddingRight="5dp"
+
+
+                                android:text="elle est equipé d'une douche interne le solest coreler les murs paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin wifi cable canalsat  "
+                                android:textColor="@color/black_50"
+                                android:textSize="13sp"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <LinearLayout
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+
+                                android:layout_alignBottom="@+id/descript_text"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:background="@drawable/round_white_50" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+
+                            android:layout_marginTop="35dp">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Inclus"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Energy"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="25dp"
+
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp">
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1."
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Internet "
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="15dp"
+                                    android:text="oui "
+                                    android:textColor="@color/black" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="35dp">
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2."
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="coin penderie "
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="15dp"
+                                    android:text="oui "
+                                    android:textColor="@color/black" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="35dp">
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="3."
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="coin couisine "
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="15dp"
+                                    android:text="oui "
+                                    android:textColor="@color/black" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="35dp">
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4."
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Abonnement cable / canalsat "
+                                    android:textColor="@color/black_50" />
+
+                                <TextView
+                                    style="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="15dp"
+                                    android:text="oui "
+                                    android:textColor="@color/black" />
+
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </ScrollView>
+                <LinearLayout
+                    android:id="@+id/bottom_lpr"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reserver"
+
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:background="@drawable/round_e6e0e3_10"
+                        android:paddingTop="5dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:paddingBottom="5dp" />
+
+                    <TextView
+                        android:id="@+id/prix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+
+
+                        android:text="200 000/Ans"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:background="@drawable/round_e6e0e3_10"
+                        android:paddingTop="5dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:paddingBottom="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Louer"
+
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:background="@drawable/round_e6e0e3_10"
+                        android:paddingTop="5dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:paddingBottom="5dp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

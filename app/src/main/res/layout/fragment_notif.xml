@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_notif">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F2FC">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:text="Notification"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="20dp"/>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/container_notif"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="40dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+
+
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m6"
+
+                                    />
+
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="40dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m7"
+
+                                    />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="45dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m4"
+                                    app:cardBackgroundColor="#80FFFFFF"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="45dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m7"
+                                    app:cardBackgroundColor="#80FFFFFF"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="45dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m6"
+                                    app:cardBackgroundColor="#80FFFFFF"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="45dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m4"
+                                    app:cardBackgroundColor="#80FFFFFF"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="45dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            app:cardBackgroundColor="#80FFFFFF"
+                            app:cardCornerRadius="55dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardBackgroundColor="#80FFFFFF"
+                                app:cardCornerRadius="55dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/m88"
+                                    app:cardBackgroundColor="#80FFFFFF"
+
+                                    />
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginTop="45dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="25dp">
+
+                        <LinearLayout
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:background="@drawable/round_e6e0e3_55"
+                            android:gravity="center"
+                            app:cardCornerRadius="55dp">
+
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="center"
+
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_baseline_shopping_bag_24"
+
+                                    />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingBottom="2dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+
+
+                                android:text="Nouvelle Cité"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+
+                                android:textStyle="bold"
+
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="construction terminé"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+
+                                app:layout_constraintHorizontal_weight="0.2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="de la cité des anges à Douala au quartier bonapriso"
+
+                                android:textColor="@color/black_50"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintHorizontal_weight="0.6" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Consulter"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/label_chambre"
+
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

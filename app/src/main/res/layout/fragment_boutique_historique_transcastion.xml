@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9F2FC"
+    tools:context=".fragment_boutique_historique_transcastion">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item2_page_boutique"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item1_item2_page_boutique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="30dp"
+
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/icon_retrait"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/historique_transaction"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/photo"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    </ImageView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/historique_transaction"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Historique"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintBottom_toBottomOf="@id/icon_retrait"
+                    app:layout_constraintLeft_toRightOf="@id/icon_retrait"
+
+                    app:layout_constraintTop_toTopOf="@id/icon_retrait" />
+
+                <TextView
+                    android:id="@+id/label_historique_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="15dp"
+                    android:text="Virement Du Compte"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="@id/historique_transaction"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/date_transaction"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="09 - 10 - 2024 "
+                    android:textColor="@color/black_50"
+
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait"
+                    app:layout_constraintTop_toBottomOf="@id/historique_transaction" />
+
+
+                <TextView
+                    android:id="@+id/operation_transaction"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Operation Effectuer"
+
+                    android:textColor="@color/black_50"
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait"
+                    app:layout_constraintTop_toBottomOf="@id/date_transaction" />
+
+                <TextView
+                    android:id="@+id/label_operation_effectuer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="15dp"
+                    android:text="Retrait d'argent"
+                    android:textColor="@color/black"
+
+                    android:textSize="14sp"
+
+                    app:layout_constraintBottom_toBottomOf="@id/operation_transaction"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/montant_transaction"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Montant De L'opeartion"
+
+                    android:textColor="@color/black_50"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait"
+                    app:layout_constraintTop_toBottomOf="@id/operation_transaction" />
+
+
+                <TextView
+                    android:id="@+id/label_montant_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="- 731 000"
+                    android:textColor="#CCFF0303"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+
+
+                    app:layout_constraintBottom_toBottomOf="@id/montant_transaction"
+                    app:layout_constraintRight_toRightOf="@id/label_operation_effectuer" />
+
+
+                <TextView
+                    android:id="@+id/nouveau_solde"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Nouveau Solde"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait"
+                    app:layout_constraintTop_toBottomOf="@id/montant_transaction" />
+
+                <TextView
+                    android:id="@+id/label_nouveau_solde"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="9 609 000f"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+
+                    app:layout_constraintBottom_toBottomOf="@id/nouveau_solde"
+                    app:layout_constraintRight_toRightOf="@id/label_operation_effectuer" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginTop="12dp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/nouveau_solde"
+                    app:layout_constraintTop_toBottomOf="@id/nouveau_solde">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/round_white" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_white_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_white_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_white_50" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item2_item2_page_boutique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="65dp"
+            app:layout_constraintTop_toBottomOf="@id/item1_item2_page_boutique">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hori_bar"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+
+                android:background="@color/black"
+
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item5"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hori_bar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/icon_retrait2"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/historique_transaction_chambre1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/photo"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    </ImageView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/historique_transaction_chambre1"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Historique"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintBottom_toBottomOf="@id/icon_retrait2"
+                    app:layout_constraintLeft_toRightOf="@id/icon_retrait2"
+
+                    app:layout_constraintTop_toTopOf="@id/icon_retrait2" />
+
+                <TextView
+                    android:id="@+id/label_historique_transaction_chambre1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="15dp"
+                    android:text="Virement Chambre 1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="@id/historique_transaction_chambre1"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/date_transaction_chambre1"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="09 - 10 - 2024 "
+                    android:textColor="@color/black_50"
+
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait2"
+                    app:layout_constraintTop_toBottomOf="@id/historique_transaction_chambre1" />
+
+
+                <TextView
+                    android:id="@+id/operation_transaction_chambre1"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Operation Effectuer"
+
+                    android:textColor="@color/black_50"
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait2"
+                    app:layout_constraintTop_toBottomOf="@id/date_transaction_chambre1" />
+
+                <TextView
+                    android:id="@+id/label_operation_effectuer_chambre1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="15dp"
+                    android:text="Payement Louer"
+                    android:textColor="@color/black"
+
+                    android:textSize="14sp"
+
+                    app:layout_constraintBottom_toBottomOf="@id/operation_transaction_chambre1"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/num_versement"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Versement N°"
+
+                    android:textColor="@color/black_50"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait2"
+                    app:layout_constraintTop_toBottomOf="@id/operation_transaction_chambre1" />
+
+
+                <TextView
+                    android:id="@+id/versement_restant"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Versement Restant"
+
+                    android:textColor="@color/black_50"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait2"
+                    app:layout_constraintTop_toBottomOf="@id/num_versement" />
+
+                <TextView
+                    android:id="@+id/montant_transaction_chambre1"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Montant De L'opeartion"
+
+                    android:textColor="@color/black_50"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait2"
+                    app:layout_constraintTop_toBottomOf="@id/versement_restant" />
+
+
+                <TextView
+                    android:id="@+id/label_num_versement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="2"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+
+
+                    app:layout_constraintBottom_toBottomOf="@id/num_versement"
+                    app:layout_constraintRight_toRightOf="@id/label_operation_effectuer_chambre1" />
+
+                <TextView
+                    android:id="@+id/label_verement_restant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+
+
+                    app:layout_constraintBottom_toBottomOf="@id/versement_restant"
+                    app:layout_constraintRight_toRightOf="@id/label_operation_effectuer_chambre1" />
+
+                <TextView
+                    android:id="@+id/label_montant_transaction_chambre1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="+ 31 000"
+                    android:textColor="#CC03FF25"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+
+
+                    app:layout_constraintBottom_toBottomOf="@id/montant_transaction_chambre1"
+                    app:layout_constraintRight_toRightOf="@id/label_operation_effectuer_chambre1" />
+
+
+                <TextView
+                    android:id="@+id/nouveau_solde_chambre1"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Nouveau Solde"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/icon_retrait2"
+                    app:layout_constraintTop_toBottomOf="@id/montant_transaction_chambre1" />
+
+                <TextView
+                    android:id="@+id/label_nouveau_solde_chambre1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="9 609 000f"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+
+                    app:layout_constraintBottom_toBottomOf="@id/nouveau_solde_chambre1"
+                    app:layout_constraintRight_toRightOf="@id/label_operation_effectuer_chambre1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginTop="12dp"
+
+                    app:layout_constraintLeft_toLeftOf="@id/nouveau_solde_chambre1"
+                    app:layout_constraintTop_toBottomOf="@id/nouveau_solde_chambre1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/round_white" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_white_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_white_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_white_50" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

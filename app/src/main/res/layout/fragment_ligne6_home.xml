@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_height="match_parent"
+    tools:context=".fragment_ligne6_home">
+
+    <LinearLayout
+        android:id="@+id/ligne5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item2"
+        android:orientation="vertical"
+
+        android:layout_marginTop="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="7dp"
+                android:text="Ville"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginRight="3dp"
+                android:text="tout voir"
+                android:textColor="@color/black_50"
+                android:textSize="13sp"
+                android:textStyle="bold"
+
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardiLigne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:cardCornerRadius="10dp"
+
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <ImageView
+                android:transitionName="sharedImage"
+                android:id="@+id/imgLigne5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/m88"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textLigne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginLeft="20dp"
+            android:text="Appartement"
+            android:textColor="#CCFFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/cardiLigne5"
+            app:layout_constraintTop_toTopOf="@id/cardiLigne5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card2iLigne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="15dp"
+
+            app:layout_constraintLeft_toRightOf="@id/textLigne5"
+            app:layout_constraintTop_toTopOf="@id/textLigne5"
+            app:layout_constraintBottom_toBottomOf="@id/textLigne5">
+
+            <ImageView
+                android:id="@+id/img2Ligne5"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/plce"
+                android:visibility="gone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text2Ligne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginLeft="3dp"
+            android:text="Yaoundé, Cité Verte"
+            android:textColor="#CCFFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/textLigne5"
+            app:layout_constraintLeft_toRightOf="@id/card2iLigne5"
+            app:layout_constraintTop_toTopOf="@id/textLigne5" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card3iLigne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            app:layout_constraintLeft_toRightOf="@id/text3Ligne5"
+            app:layout_constraintBottom_toBottomOf="@id/text3Ligne5">
+
+            <ImageView
+                android:id="@+id/img3Ligne5"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/favp"
+                android:visibility="gone"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text3Ligne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="5dp"
+            android:text="22"
+            android:textColor="#B3FFFFFF"
+
+
+            android:textSize="12sp"
+
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/textLigne5"
+            app:layout_constraintTop_toBottomOf="@id/textLigne5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card4iLigne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            app:layout_constraintLeft_toRightOf="@id/text4Ligne5"
+            app:layout_constraintBottom_toBottomOf="@id/text4Ligne5">
+
+            <ImageView
+                android:id="@+id/img4Ligne5"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fv"
+                android:visibility="gone"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text4Ligne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginLeft="15dp"
+            android:text="52"
+            android:textColor="#B3FFFFFF"
+
+
+            android:textSize="12sp"
+
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/text3Ligne5"
+            app:layout_constraintLeft_toRightOf="@id/card3iLigne5" />
+
+        <TextView
+            android:id="@+id/text5Ligne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginLeft="15dp"
+            android:text="10 Commentaires"
+            android:textColor="#B3FFFFFF"
+
+
+            android:textSize="12sp"
+
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/text3Ligne5"
+            app:layout_constraintLeft_toRightOf="@id/card4iLigne5" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card5iLigne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            app:layout_constraintLeft_toRightOf="@id/text5Ligne5"
+            app:layout_constraintBottom_toBottomOf="@id/text5Ligne5">
+
+            <ImageView
+                android:id="@+id/img5Ligne5"
+                android:layout_width="14dp"
+                android:layout_height="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/comment"
+                android:visibility="gone"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="6dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text6Ligne5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="5dp"
+            android:text="Salon: 4m*4m*2m, Chambre: 3m*3m*2m"
+            android:textColor="#B3FFFFFF"
+
+            android:textSize="12sp"
+
+
+            app:layout_constraintLeft_toLeftOf="@id/textLigne5"
+            app:layout_constraintTop_toBottomOf="@id/text3Ligne5"
+
+
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewLigne5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+
+            app:layout_constraintLeft_toLeftOf="@id/cardiLigne5"
+            app:layout_constraintTop_toBottomOf="@id/text6Ligne5"
+            tools:itemCount="1"
+            tools:listitem="@layout/itemligne5" />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

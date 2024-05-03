@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F9F2FC"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/containerG2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/containerViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:paddingBottom="30dp"
+
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+            </androidx.viewpager.widget.ViewPager>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp">
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_black_50_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_black_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_black_50_50" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_black_50_50" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/containerViewPager"
+            android:id="@+id/containerRv">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleViewLigne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp"
+                tools:itemCount="0"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="-60dp"
+                android:elevation="5dp"
+
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="L O A D I N G . . ."
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/squelette"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@id/containerG2">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="C O N N E C T E R   V O U S   A   I N T E R N E T"
+            android:textSize="14sp"/>
+
+
+    </LinearLayout>
+
+<!--
+
+    <LinearLayout
+
+        android:id="@+id/containerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/text1Ligne2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2Ligne2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right"
+            android:textColor="@color/black_50"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:id="@+id/containerTextLigne3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/text1Ligne3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2Ligne3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right"
+            android:textColor="@color/black_50"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewLigne3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        tools:itemCount="1"
+        tools:listitem="@layout/itemligne31">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+
+        android:id="@+id/containerTextLigne4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text1Ligne4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2Ligne4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right"
+            android:textColor="@color/black_50"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewLigne4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone"
+        tools:itemCount="1"
+        tools:listitem="@layout/itemligne4">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewLigne5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone"
+        tools:itemCount="1"
+        tools:listitem="@layout/itemligne4">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewNextData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone"
+        tools:itemCount="1"
+        tools:listitem="@layout/itemligne4">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>

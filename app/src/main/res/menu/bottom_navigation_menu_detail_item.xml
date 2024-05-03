@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:icon="@drawable/pps"
+        android:title="home"/>
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/prix"
+        android:title="search"/>
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/photo"
+        android:title="store"/>
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:icon="@drawable/comment"
+        android:title="favoris"/>
+    <item
+        android:id="@+id/btn_localisation"
+        android:enabled="true"
+        android:icon="@drawable/plce"
+        android:title="profil"/>
+
+</menu>

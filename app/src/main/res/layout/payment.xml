@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+<!--
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/m7"
+            android:scaleType="centerCrop"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+
+
+            android:background="#A6000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.493"
+            tools:layout_editor_absoluteX="0dp">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardimgchambre"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="18dp"
+
+                app:layout_constraintLeft_toLeftOf="@id/duré"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/imgchambre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/m6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                </ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/nncite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+
+                android:text="cité  hypocrate"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/cardimgchambre"
+                app:layout_constraintTop_toTopOf="@id/cardimgchambre" />
+
+            <TextView
+                android:id="@+id/nchambre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="2dp"
+
+
+                android:text="chambre 3"
+                android:textColor="#B3FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:circularflow_radiusInDP="30dp"
+
+                app:layout_constraintBottom_toTopOf="@id/prixchambre"
+                app:layout_constraintLeft_toRightOf="@id/cardimgchambre" />
+
+            <TextView
+                android:id="@+id/prixchambre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="2dp"
+
+
+                android:text="300 000/ans"
+                android:textColor="#B3FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:circularflow_radiusInDP="30dp"
+                app:layout_constraintBottom_toTopOf="@id/iconimg"
+                app:layout_constraintLeft_toRightOf="@id/cardimgchambre" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/iconimg"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                app:layout_constraintBottom_toBottomOf="@id/cardimgchambre"
+                app:layout_constraintLeft_toRightOf="@id/cardimgchambre">
+
+
+                <ImageView
+                    android:id="@+id/comment"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/comment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/like"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/like"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/comment"
+                    app:layout_constraintRight_toLeftOf="@+id/disLike"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/disLike"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/klity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/like"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/fav"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/fv"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/disLike">
+
+                </ImageView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/louer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+
+                android:text="louer"
+
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/reserver"
+                app:layout_constraintTop_toBottomOf="@+id/cardimgchambre" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+
+                android:layout_marginTop="4dp"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="@id/louer"
+                app:layout_constraintRight_toRightOf="@id/louer"
+                app:layout_constraintTop_toBottomOf="@id/louer" />
+
+            <TextView
+                android:id="@+id/reserver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="reserver"
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/louer"
+                app:layout_constraintLeft_toRightOf="@id/louer"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/louer" />
+
+
+            <TextView
+                android:id="@+id/duré"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="60dp"
+                android:text="dure de l'occation"
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp"
+
+                app:circularflow_radiusInDP="30dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/edure"
+                app:layout_constraintTop_toBottomOf="@id/louer" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/edure"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:background="@drawable/round"
+                app:layout_constraintBottom_toBottomOf="@id/duré"
+                app:layout_constraintLeft_toRightOf="@+id/duré"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/duré">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/serch"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/search"
+                    app:layout_constraintLeft_toRightOf="@+id/serch">
+
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/debutLoccation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="40dp"
+                android:text="debut de l'occation"
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp"
+
+                app:circularflow_radiusInDP="30dp"
+
+                app:layout_constraintLeft_toLeftOf="@id/duré"
+                app:layout_constraintTop_toBottomOf="@+id/duré" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/edebutLoccation"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:background="@drawable/round"
+
+                app:layout_constraintBottom_toBottomOf="@+id/debutLoccation"
+
+                app:layout_constraintLeft_toRightOf="@+id/duré"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/debutLoccation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/serch"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/search"
+                    app:layout_constraintLeft_toRightOf="@+id/serch">
+
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/finLccation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="40dp"
+                android:text="fin de l'occation"
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp"
+
+                app:circularflow_radiusInDP="30dp"
+
+                app:layout_constraintLeft_toLeftOf="@id/duré"
+                app:layout_constraintTop_toBottomOf="@+id/debutLoccation" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/efinLccation"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:background="@drawable/round"
+
+                app:layout_constraintBottom_toBottomOf="@+id/finLccation"
+
+                app:layout_constraintLeft_toRightOf="@+id/duré"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/finLccation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/serch"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/search"
+                    app:layout_constraintLeft_toRightOf="@+id/serch">
+
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/modePayement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="40dp"
+                android:text="mode de payement"
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp"
+
+                app:circularflow_radiusInDP="30dp"
+
+                app:layout_constraintLeft_toLeftOf="@id/duré"
+                app:layout_constraintTop_toBottomOf="@+id/finLccation" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emodepayement"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:background="@drawable/round"
+
+                app:layout_constraintBottom_toBottomOf="@+id/modePayement"
+
+                app:layout_constraintLeft_toRightOf="@+id/duré"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/modePayement">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/serch"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/search"
+                    app:layout_constraintLeft_toRightOf="@+id/serch">
+
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/numero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="40dp"
+                android:text="numero de dbit"
+                android:textColor="#B3FFFFFF"
+
+                android:textSize="16sp"
+
+                app:circularflow_radiusInDP="30dp"
+                app:layout_constraintLeft_toLeftOf="@id/duré"
+                app:layout_constraintTop_toBottomOf="@id/modePayement" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/enumerodebit"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:background="@drawable/round"
+
+                app:layout_constraintBottom_toBottomOf="@+id/numero"
+                app:layout_constraintLeft_toRightOf="@+id/duré"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/numero">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/serch"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/search"
+                    app:layout_constraintLeft_toRightOf="@+id/serch">
+
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/numero"
+                app:layout_constraintRight_toRightOf="@id/enumerodebit"
+                app:layout_constraintTop_toBottomOf="@id/numero">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round2"
+
+                    android:padding="15dp"
+                    android:text="louer"
+                    android:textColor="#B3FFFFFF"
+
+
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    -->
+</androidx.constraintlayout.widget.ConstraintLayout>

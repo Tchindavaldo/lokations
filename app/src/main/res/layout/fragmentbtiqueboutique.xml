@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F2FC"
+    tools:context=".Fragment_boutique_boutique">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item1_page_boutique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+<HorizontalScrollView
+    android:id="@+id/item1_item1_page_boutique1"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/jour"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:text="Chambre libre"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=" Occupé"
+
+
+            android:textColor="@color/black_50"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="impayé"
+
+
+            android:textColor="@color/black_50"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="payement complet"
+
+
+            android:textColor="@color/black_50"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="100dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="En Fin De contrat"
+
+
+            android:textColor="@color/black_50"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <HorizontalScrollView
+            android:id="@+id/container_gestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/item1_page_boutique">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ajout_produit"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+
+                    android:background="@drawable/round_e6e0e3_10"
+                    android:gravity="center"
+                    android:orientation="vertical"
+
+                    app:layout_constraintLeft_toLeftOf="@id/jour">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/img_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+
+                        android:background="@drawable/round_white_50"
+                        android:padding="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/ic_baseline_add_box_24"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/ajout"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="Ajouter"
+                        android:textColor="@color/black_50"
+
+
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toTopOf="@id/label_ajout"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add"
+                        app:layout_constraintTop_toBottomOf="@id/img_add" />
+
+                    <TextView
+                        android:id="@+id/label_ajout"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Un Nouvel Article"
+
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add"
+                        app:layout_constraintTop_toBottomOf="@id/ajout" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/modifier_produit"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_e6e0e3_10">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/img_add1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+
+                        android:background="@drawable/round_white_50"
+                        android:padding="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/ic_baseline_add_box_24"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/ajout1"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="modifier"
+                        android:textColor="@color/black_50"
+
+
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toTopOf="@id/label_ajout1"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add1"
+                        app:layout_constraintTop_toBottomOf="@id/img_add1" />
+
+                    <TextView
+                        android:id="@+id/label_ajout1"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Un Aricle Existant"
+
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add1"
+                        app:layout_constraintTop_toBottomOf="@id/ajout1" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_e6e0e3_10">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/img_add2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+
+                        android:background="@drawable/round_white_50"
+                        android:padding="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/ic_baseline_add_box_24"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/ajout2"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="suprimer"
+                        android:textColor="@color/black_50"
+
+
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toTopOf="@id/label_ajout2"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add2"
+                        app:layout_constraintTop_toBottomOf="@id/img_add2" />
+
+                    <TextView
+                        android:id="@+id/label_ajout2"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Un Aricle Existant"
+
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add2"
+                        app:layout_constraintTop_toBottomOf="@id/ajout2" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/item2_item1_page_boutique"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_e6e0e3_10">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/img_add3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+
+                        android:background="@drawable/round_white_50"
+                        android:padding="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/ic_baseline_add_box_24"
+
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/ajout3"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="suprimer"
+                        android:textColor="#80FFFFFF"
+
+
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toTopOf="@id/label_ajout3"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add3"
+                        app:layout_constraintTop_toBottomOf="@id/img_add3" />
+
+                    <TextView
+                        android:id="@+id/label_ajout3"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Un Aricle Existant"
+
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="@id/img_add3"
+                        app:layout_constraintTop_toBottomOf="@id/ajout3" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewHomme"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/container_gestion"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+
+            tools:itemCount="3"
+            tools:listitem="@layout/inflate_chambre_infos"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

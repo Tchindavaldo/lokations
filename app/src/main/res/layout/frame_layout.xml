@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container_general">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_framel_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+
+
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/container_item_nav"
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="0dp"
+            android:elevation="5dp"
+
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="bottom|right"
+
+            android:background="@drawable/round_nav_detail"
+
+
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+
+
+            >
+
+
+            <LinearLayout
+                android:id="@+id/button_detail_infos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:background="@drawable/round_item_nav_detail"
+                android:gravity="center"
+                android:padding="8dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/button_detail_photo"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/autreCité1"
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pps"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_item_selected_nav_detail"
+                android:gravity="center"
+                android:padding="8dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_infos"
+                app:layout_constraintRight_toLeftOf="@id/button_detail_comment"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/photo"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_payement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_item_nav_detail"
+                android:gravity="center"
+                android:padding="8dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/prix">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_item_nav_detail"
+                android:gravity="center"
+                android:padding="8dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/comment">
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_localisation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_item_nav_detail"
+                android:gravity="center"
+                android:padding="8dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_comment"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/plce"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/container_item_nav2"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+
+            android:layout_marginBottom="5dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+
+            android:orientation="horizontal"
+            android:gravity="center"
+
+            android:background="@drawable/round_nav_detail"
+
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            >
+
+
+            <LinearLayout
+                android:id="@+id/button_detail_infos2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:gravity="center"
+                android:padding="8dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/button_detail_photo"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pps2"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_photo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/round_item_selected_nav_detail"
+                android:gravity="center"
+                android:padding="8dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_infos"
+                app:layout_constraintRight_toLeftOf="@id/button_detail_comment"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/photo2"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_payement2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:padding="8dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/prix2">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_comment2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:padding="8dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_photo"
+                app:layout_constraintRight_toLeftOf="@id/cardAutreCité6"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/comment2">
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_localisation2" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:padding="8dp"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/button_detail_comment"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/plce2"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
