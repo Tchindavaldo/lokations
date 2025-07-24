@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment_comment"
+    android:layout_marginTop="38dp"
 
     >
 
@@ -16,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="#F9F2FC"
+        android:background="#FFFFFF"
 
 
         app:layout_constraintBottom_toBottomOf="parent"

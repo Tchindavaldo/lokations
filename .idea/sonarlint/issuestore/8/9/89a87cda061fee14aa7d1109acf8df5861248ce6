@@ -1,0 +1,90 @@
+
+Ykotlin:S6615";Remove this variable, which is assigned but never accessed.( Å’úÿÿÿÿ
+>kotlin:S6615˜" Remove this useless initializer.(±»„òüÿÿÿÿ
+>kotlin:S6615–" Remove this useless initializer.(Ú†¾Ïşÿÿÿÿ
+6kotlin:S125O"Remove this commented out code.(ıëõ
+;kotlin:S125a"Remove this commented out code.(õïàÁùÿÿÿÿ
+7kotlin:S125Ú"Remove this commented out code.(şàÜç
+<kotlin:S125"Remove this commented out code.(Ù††ıÿÿÿÿ
+<kotlin:S125"Remove this commented out code.(Ûç»úÿÿÿÿ
+<kotlin:S125•"Remove this commented out code.(áËï·øÿÿÿÿ
+7kotlin:S125¬"Remove this commented out code.(Šš´•
+<kotlin:S125°"Remove this commented out code.(Á“Ê‹úÿÿÿÿ
+<kotlin:S125³"Remove this commented out code.(Í°ÖÕùÿÿÿÿ
+<kotlin:S125Ï"Remove this commented out code.(Ûç»úÿÿÿÿ
+<kotlin:S125Ö"Remove this commented out code.(Ûç»úÿÿÿÿ
+<kotlin:S125Ù"Remove this commented out code.(¯íÀùÿÿÿÿ
+<kotlin:S125Ÿ"Remove this commented out code.(›Å€îÿÿÿÿÿ
+7kotlin:S125¬"Remove this commented out code.(ÁÑ˜É
+<kotlin:S125ğ"Remove this commented out code.(Â¸é½ıÿÿÿÿ
+7kotlin:S125ô"Remove this commented out code.(´íËÌ
+<kotlin:S125‹"Remove this commented out code.(Ûç»úÿÿÿÿ
+7kotlin:S125"Remove this commented out code.(Š »ã
+<kotlin:S125 "Remove this commented out code.(Í°ÖÕùÿÿÿÿ
+<kotlin:S125¯"Remove this commented out code.(êÙ°®şÿÿÿÿ
+<kotlin:S125¶"Remove this commented out code.(¶¡Æïıÿÿÿÿ
+<kotlin:S125È"Remove this commented out code.(õÁ‹Ûüÿÿÿÿ
+<kotlin:S125‘"Remove this commented out code.(Ûç»úÿÿÿÿ
+<kotlin:S125¬"Remove this commented out code.(­ôÉÆùÿÿÿÿ
+7kotlin:S125Ä"Remove this commented out code.(áÇò÷
+<kotlin:S125Ì"Remove this commented out code.(óÂ¬§úÿÿÿÿ
+<kotlin:S125İ"Remove this commented out code.(ˆâ•×ùÿÿÿÿ
+<kotlin:S125“"Remove this commented out code.(¶šÅÛûÿÿÿÿ
+<kotlin:S125£"Remove this commented out code.(“ã÷ªşÿÿÿÿ
+6kotlin:S125²"Remove this commented out code.(ì‚²O
+7kotlin:S125»"Remove this commented out code.(ÃÎÃÅ
+<kotlin:S125¿"Remove this commented out code.(ÏÓĞùÿÿÿÿ
+<kotlin:S125Â"Remove this commented out code.(Éİıÿÿÿÿÿ
+7kotlin:S125Å"Remove this commented out code.(–±Ù
+7kotlin:S125Õ"Remove this commented out code.(îáÂ†
+<kotlin:S125„"Remove this commented out code.(‚ŒÖ¥şÿÿÿÿ
+7kotlin:S125‡"Remove this commented out code.(°èË¬
+<kotlin:S125"Remove this commented out code.(Ù††ıÿÿÿÿ
+7kotlin:S125–"Remove this commented out code.(±ıƒæ
+<kotlin:S125š"Remove this commented out code.(ä¤ëæşÿÿÿÿ
+kkotlin:S117­"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ïñ·şÿÿÿÿ
+Ikotlin:S1481Á"+Remove this unused "curent" local variable.(’ÿÜÿùÿÿÿÿ
+Tkotlin:S1481À"6Remove this unused "topCoordFirstLine" local variable.(Ù”¿Çşÿÿÿÿ
+Lkotlin:S1481¹"3Remove this unused "coordfirstLine" local variable.(“©—
+Jkotlin:S1481±",Remove this unused "addPosi" local variable.(’À…Óùÿÿÿÿ
+Okotlin:S1481¯"1Remove this unused "posiToInsert" local variable.(ç±à«ûÿÿÿÿ
+Lkotlin:S1481œ"3Remove this unused "rvPrevIsnotify" local variable.(Ë Å
+Lkotlin:S1481š".Remove this unused "dataIsAdd" local variable.(µï¢Øÿÿÿÿÿ
+Qkotlin:S1481™"3Remove this unused "nextLineIsHide" local variable.(¾‚¿İùÿÿÿÿ
+Pkotlin:S1481—"7Remove this unused "viewRecupFirstPosi" local variable.(Ïç“
+Lkotlin:S1481".Remove this unused "firstView" local variable.(™òÏ·üÿÿÿÿ
+Ikotlin:S1481Œ"0Remove this unused "currentLine" local variable.(Æğ°
+Lkotlin:S1481Š".Remove this unused "firstPosi" local variable.(¡®Û§øÿÿÿÿ
+Bkotlin:S1481ó")Remove this unused "size" local variable.(‡ãõ«
+Ekotlin:S1481Ù",Remove this unused "rvChild" local variable.(Àæçñ
+Gkotlin:S1481Û")Remove this unused "poA5" local variable.(”­¼Ñşÿÿÿÿ
+Gkotlin:S1481Ú")Remove this unused "poA7" local variable.(½ä†Õûÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(ï›’
+1kotlin:S1128"Remove this unused import.(Ş‚½
+7kotlin:S1128
+"Remove this unused import.(­¡©úÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(¾Ó¸™
+7kotlin:S1128"Remove this unused import.(·Ô£Ïıÿÿÿÿ
+1kotlin:S1128"Remove this unused import.(±ÿu
+7kotlin:S1128"Remove this unused import.(»·©±şÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(°ÎÑĞ
+2kotlin:S1128"Remove this unused import.(¿îû•
+2kotlin:S1128"Remove this unused import.(ë¨²™
+7kotlin:S1128"Remove this unused import.(úä’›ÿÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(ÔòÔ¦øÿÿÿÿ
+„kotlin:S101"mRename class "adapteur_recycleView_framelayout_home_data" to match the regular expression ^[A-Z][a-zA-Z0-9]*$(ñÍÒ¦
+<kotlin:S1874Ä"#Deprecated code should not be used.(É¨È¥
+<kotlin:S1874ƒ"#Deprecated code should not be used.(Í™üö
+<kotlin:S1874ù"#Deprecated code should not be used.(Í™üö
+Akotlin:S1874“"#Deprecated code should not be used.(â›àìşÿÿÿÿ
+Akotlin:S1874ë"#Deprecated code should not be used.(â›àìşÿÿÿÿ
+kkotlin:S3776F"SRefactor this method to reduce its Cognitive Complexity from 132 to the 15 allowed.(¢ıï›
+kkotlin:S3776Ó"RRefactor this method to reduce its Cognitive Complexity from 80 to the 15 allowed.(½ñº¢
+pkotlin:S3776Ø"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Œ€ë˜ÿÿÿÿÿ
+ekotlin:S6516î"LReplace explicit functional interface implementation with lambda expression.(ª›êş
+jkotlin:S6516×"LReplace explicit functional interface implementation with lambda expression.(Ì÷¢ùÿÿÿÿ
+Lkotlin:S1066Û".Merge this "if" statement with the nested one.(É¯æùÿÿÿÿ
+Lkotlin:S1066ä".Merge this "if" statement with the nested one.(É¯æùÿÿÿÿ
+Lkotlin:S1066•".Merge this "if" statement with the nested one.(É¯æùÿÿÿÿ
+Gkotlin:S1066å".Merge this "if" statement with the nested one.(ğœ©»
+Fkotlin:S1066—".Merge this "if" statement with the nested one.(Æ½¯K

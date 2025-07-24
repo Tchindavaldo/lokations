@@ -18,6 +18,7 @@ import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,7 +38,7 @@ class adapteur_recycleView_framelayout_home_data(private val type:ArrayList<Stri
                                                      private val data5:ArrayList<ArrayList<ItemsLigne5Model>>,
                                                      private val data6: ArrayList<dataClass_img_home_slide>,
                                                      private val rv: RecyclerView,
-                                                     private val posi: Int,
+                                                     private val posi: Int, val intent: Intent,
                         val context: Context
     ) : RecyclerView.Adapter<adapteur_recycleView_framelayout_home_data.ViewHolder>() {
 
@@ -135,6 +136,21 @@ val delay: Long = 0
             val adapter2 = CustomHomeAdapterItemLigne2(data0,data2[0],context)
             holder.recycleViewLigne2.adapter = adapter2
 
+            holder.recycleViewLigne2.addOnItemTouchListener(MainActivity.RecyclerTouchListener(context,holder.recycleViewLigne2,object :
+                MainActivity.ClickListener {
+
+                override fun onClick(view: View, position: Int) {
+                    //Toast.makeText(context, ItemsViewModel.rv2[position].text, Toast.LENGTH_SHORT).show()
+
+                    startActivity(context, intent, Bundle.EMPTY)
+
+
+                }
+
+                override fun onLongClick(view: View?, position: Int) {
+
+                }
+            }))
             val firstPosi = holder.recycleViewLigne2.layoutManager as LinearLayoutManager
 
             lateinit var currentLine: LinearLayout

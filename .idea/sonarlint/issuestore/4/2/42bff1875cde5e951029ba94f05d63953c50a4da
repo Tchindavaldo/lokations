@@ -1,0 +1,32 @@
+
+6kotlin:S125H"Remove this commented out code.(¾üŸú
+;kotlin:S125L"Remove this commented out code.(µ‚–èøÿÿÿÿ
+6kotlin:S125l"Remove this commented out code.(îáÂ†
+jkotlin:S117:"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$( ¹Ñû
+jkotlin:S117="SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ü©Ï
+jkotlin:S117>"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(œºä
+kkotlin:S117"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ûğâ
+kkotlin:S117‘"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Ö­…
+Okotlin:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ
+Okotlin:S1135"2Complete the task associated to this TODO comment.(ğï¢öúÿÿÿÿ
+Pkotlin:S1135ü"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ
+Akotlin:S1481E"*Remove this unused "image" local variable.(‹ïòg
+Jkotlin:S1481>"2Remove this unused "bottom_detail" local variable.(œºä
+Gkotlin:S1481="/Remove this unused "top_detail" local variable.(ü©Ï
+Mkotlin:S14811"0Remove this unused "typeTransac" local variable.(Áœ·ñùÿÿÿÿ
+Kkotlin:S14810".Remove this unused "selectfrg" local variable.(àíóùÿÿÿÿ
+Pkotlin:S1481‹"2Remove this unused "textViewLieux" local variable.(À‰íúÿÿÿÿ
+2kotlin:S1128"Remove this unused import.( ¯–
+1kotlin:S1128"Remove this unused import.(îâœu
+2kotlin:S1128
+"Remove this unused import.(¾Ó¸™
+7kotlin:S1128"Remove this unused import.(ò“ì­üÿÿÿÿ
+mkotlin:S101"QRename class "fragment_photo" to match the regular expression ^[A-Z][a-zA-Z0-9]*$(ã¹šÑøÿÿÿÿ
+:kotlin:S1874E"#Deprecated code should not be used.(‹ïòg
+Akotlin:S1874—"#Deprecated code should not be used.(ĞÕ¢Áøÿÿÿÿ
+Akotlin:S1874¤"#Deprecated code should not be used.(ĞÕ¢Áøÿÿÿÿ
+Akotlin:S1874µ"#Deprecated code should not be used.(ĞÕ¢Áøÿÿÿÿ
+Akotlin:S1874Â"#Deprecated code should not be used.(ĞÕ¢Áøÿÿÿÿ
+Akotlin:S1874Ï"#Deprecated code should not be used.(ĞÕ¢Áøÿÿÿÿ
+Akotlin:S1874ã"#Deprecated code should not be used.(ĞÕ¢Áøÿÿÿÿ
+ikotlin:S6516n"LReplace explicit functional interface implementation with lambda expression.(Ì÷¢ùÿÿÿÿ

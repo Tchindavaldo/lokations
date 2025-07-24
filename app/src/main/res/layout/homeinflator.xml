@@ -8,7 +8,7 @@
 
     android:orientation="vertical"
     android:layout_marginTop="0dp"
-    android:background="#F9F2FC">
+    android:background="#FFFFFF">
 
 <LinearLayout
     android:id="@+id/container"

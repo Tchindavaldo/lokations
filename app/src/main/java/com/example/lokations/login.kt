@@ -108,12 +108,13 @@ class login : AppCompatActivity() {
               val email  = emailView.text.toString()
               val password  = passwordView.text.toString()
 
+              startActivity(bit)
 
               auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->if (task.isSuccessful){
              //     val user = auth.currentUser
 
                   Toast.makeText(this,email ,Toast.LENGTH_SHORT).show()
-                  startActivity(bit)
+//                  startActivity(bit)
 
                   finish()
               } else{

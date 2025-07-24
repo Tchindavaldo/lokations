@@ -1,0 +1,5 @@
+
+ekotlin:S6532"HReplace this throw expression with error("Invalid position: $position").(Òâÿºÿÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(Ã¾¤†øÿÿÿÿ
+kotlin:S101
+"cRename class "adapteur_image_slide_1_home_page" to match the regular expression ^[A-Z][a-zA-Z0-9]*$(Æ¬Î¢øÿÿÿÿ

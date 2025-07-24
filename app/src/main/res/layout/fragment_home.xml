@@ -6,18 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment"
-    android:background="#F9F2FC"
+    android:background="#FFFFFF"
     >
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="25dp"
+    android:layout_height="40dp"
     android:background="@color/black_20"/>
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="23dp">
-
+        android:layout_marginTop="38dp">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -25,8 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:elevation="7dp"
             android:background="#0025121F"
+            android:elevation="7dp"
 
             app:layout_constraintEnd_toEndOf="parent"
 
@@ -37,8 +36,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="155dp"
@@ -67,8 +65,7 @@
                         android:layout_width="20dp"
                         android:layout_height="match_parent"
                         android:src="@drawable/search"
-                        app:layout_constraintLeft_toRightOf="@+id/serch"
-                        >
+                        app:layout_constraintLeft_toRightOf="@+id/serch">
 
                     </ImageView>
 
@@ -111,12 +108,11 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
 
-                        android:src="@drawable/ccount2"
                         android:layout_marginRight="20dp"
+                        android:src="@drawable/ccount2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        >
+                        app:layout_constraintTop_toTopOf="parent">
 
                     </ImageView>
 
@@ -126,6 +122,7 @@
 
 
         </androidx.appcompat.widget.Toolbar>
+
         <LinearLayout
             android:id="@+id/top_icone_nav"
             android:layout_width="match_parent"
@@ -143,11 +140,10 @@
                 android:id="@+id/item_categori"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginLeft="0dp"
-                app:cardCornerRadius="20dp"
->
+                android:gravity="center"
+                android:orientation="vertical"
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -177,15 +173,15 @@ android:orientation="vertical"
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/iconChambre"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginLeft="15dp"
-                app:cardCornerRadius="20dp"
->
+                android:gravity="center"
+                android:orientation="vertical"
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -215,14 +211,14 @@ android:orientation="vertical"
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginLeft="15dp"
-                app:cardCornerRadius="20dp"
->
+                android:gravity="center"
+                android:orientation="vertical"
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -252,14 +248,14 @@ android:orientation="vertical"
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginLeft="15dp"
-                app:cardCornerRadius="20dp"
->
+                android:gravity="center"
+                android:orientation="vertical"
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -289,14 +285,14 @@ android:orientation="vertical"
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginLeft="15dp"
-                app:cardCornerRadius="20dp"
->
+                android:gravity="center"
+                android:orientation="vertical"
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -326,14 +322,14 @@ android:orientation="vertical"
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginLeft="15dp"
-                app:cardCornerRadius="20dp"
->
+                android:gravity="center"
+                android:orientation="vertical"
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -365,11 +361,6 @@ android:orientation="vertical"
             </LinearLayout>
 
 
-
-
-
-
-
         </LinearLayout>
 
 
@@ -379,8 +370,8 @@ android:orientation="vertical"
             android:layout_height="0dp"
 
 
-            android:visibility="visible"
             android:layout_marginTop="25dp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top_icone_nav"
 

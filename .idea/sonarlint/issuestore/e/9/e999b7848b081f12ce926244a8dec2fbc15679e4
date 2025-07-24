@@ -1,0 +1,12 @@
+
+Ykotlin:S1172A"<Use "_" instead of this unused lambda parameter "exception".(³Ø˜·úÿÿÿÿ
+6kotlin:S125G"Remove this commented out code.(óäŸã
+6kotlin:S125["Remove this commented out code.(óäŸã
+3kotlin:S6530/"Remove this unchecked cast.(šÊºë
+7kotlin:S1128"Remove this unused import.(µ““ûÿÿÿÿ
+qkotlin:S101"ZRename class "activity_update_produit" to match the regular expression ^[A-Z][a-zA-Z0-9]*$(à¡­”
+;kotlin:S1874"#Deprecated code should not be used.(ìûþñ
+;kotlin:S1874"#Deprecated code should not be used.(ìûþñ
+;kotlin:S1874"#Deprecated code should not be used.(ìûþñ
+;kotlin:S1874"#Deprecated code should not be used.(ìûþñ
+Dkotlin:S6518/",Replace function call with indexed accessor.(šÊºë

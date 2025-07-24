@@ -1,6 +1,7 @@
 package com.example.lokations
 import android.content.Context
 import android.graphics.Rect
+import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -84,24 +86,26 @@ holder.ligne5.alpha=0f*/
 
         }
 
-     /*   rvparent.addOnScrollListener(object:RecyclerView.OnScrollListener(){
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-            super.onScrolled(recyclerView, dx, dy)
-                val firstPosiRecup = firstPosi.findFirstVisibleItemPosition()
-            if(firstPosiRecup==1){
 
-                holder.prix.animate().alpha(1f).setDuration(t).setStartDelay(2000).start()
 
-            }
-            if(position==1){
+        /*   rvparent.addOnScrollListener(object:RecyclerView.OnScrollListener(){
+               override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+               super.onScrolled(recyclerView, dx, dy)
+                   val firstPosiRecup = firstPosi.findFirstVisibleItemPosition()
+               if(firstPosiRecup==1){
 
-                if(  holder.itemView.isShown){
-                    Toast.makeText(context,"holder 2 est visible",Toast.LENGTH_SHORT).show()
-                }
-            }
+                   holder.prix.animate().alpha(1f).setDuration(t).setStartDelay(2000).start()
 
-        }})
-        */
+               }
+               if(position==1){
+
+                   if(  holder.itemView.isShown){
+                       Toast.makeText(context,"holder 2 est visible",Toast.LENGTH_SHORT).show()
+                   }
+               }
+
+           }})
+           */
     /*    if(position==0) {
             holder.containerViewPager.visibility = View.VISIBLE
         }*/

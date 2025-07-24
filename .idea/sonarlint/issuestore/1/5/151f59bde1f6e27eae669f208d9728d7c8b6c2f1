@@ -1,0 +1,34 @@
+
+Skotlin:S6615/";Remove this variable, which is assigned but never accessed.(â¥–
+6kotlin:S1254"Remove this commented out code.(«Íèû
+;kotlin:S1256"Remove this commented out code.(é‘º©úÿÿÿÿ
+;kotlin:S1259"Remove this commented out code.(öé“şÿÿÿÿ
+<kotlin:S125ƒ"Remove this commented out code.(ğÉæõøÿÿÿÿ
+okotlin:S117K"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(úƒ–üÿÿÿÿ
+Ekotlin:S1481<"(Remove this unused "img" local variable.(±üÚùÿÿÿÿ
+Jkotlin:S14813"-Remove this unused "exitAnim" local variable.(Èˆ­Îüÿÿÿÿ
+Kkotlin:S14812".Remove this unused "enterAnim" local variable.(’š›¥úÿÿÿÿ
+?kotlin:S14810"'Remove this unused "tr" local variable.(ô¼«–
+Nkotlin:S1481|"1Remove this unused "listdataHome" local variable.(”š‘Šÿÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(üƒŠ¸
+7kotlin:S1128"Remove this unused import.(ÈÚò„ıÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(ÚÚÙÁúÿÿÿÿ
+7kotlin:S1128
+"Remove this unused import.(Â˜°úÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(¾Ó¸™
+7kotlin:S1128"Remove this unused import.(·Ô£Ïıÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(Ñå¾ô
+2kotlin:S1128"Remove this unused import.(¡Ïè«
+7kotlin:S1128"Remove this unused import.(µ““ûÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(Ã¾¤†øÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(İ˜Æ‚
+7kotlin:S1128"Remove this unused import.(™¬±öúÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(Ö÷‰äûÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(Â°î£ıÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(¯Ò¸¡
+7kotlin:S1128"Remove this unused import.(®Ç—Âüÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(ë¨²™
+;kotlin:S1874)"#Deprecated code should not be used.(ìûşñ
+;kotlin:S1874)"#Deprecated code should not be used.(ìûşñ
+;kotlin:S1874)"#Deprecated code should not be used.(ìûşñ
+;kotlin:S1874)"#Deprecated code should not be used.(ìûşñ

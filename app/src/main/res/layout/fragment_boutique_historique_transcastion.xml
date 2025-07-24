@@ -5,7 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f9F2FC"
+    android:background="#FFFFFF"
     tools:context=".fragment_boutique_historique_transcastion">
 
     <androidx.constraintlayout.widget.ConstraintLayout

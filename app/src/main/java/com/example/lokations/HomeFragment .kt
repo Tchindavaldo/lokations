@@ -307,17 +307,22 @@ HomeFragment  : Fragment() {
 
         val adapter2 = CustomHomeAdapterItemLigne2(itemList,data2,requireContext())
 
+        val intent: Intent = Intent(requireContext(), FrameLayoutActivity::class.java)
+        intent.putExtra("image", data2[0].image2)
+        intent.putExtra("categori", data2[0].categorie )
+        intent.putExtra("lieux", data2[0].lieux )
+        intent.putExtra("ItemCategorie", data2[0].itemCategorie )
+        intent.putExtra("prix", data2[0].prix )
         val adapter = adapteur_recycleView_framelayout_home_data(data,itemList,listData1,listData2,listData3,listData4,listData5,itemList,
-            recyclervieww,0, requireContext())
+            recyclervieww,0,intent, requireContext())
 
         recyclervieww.layoutManager = LinearLayoutManager(requireContext())
         recyclervieww.adapter = adapter
 
 
 
-        val intent: Intent = Intent(requireContext(), FrameLayoutActivity::class.java)
 
-    //    val adapter = CustomAdapterHome(recyclervieww,dataHome,listdata1, listdata2,listdata3,listdata4,listdata5,arrayItemList, requireContext(), "detail_cite", intent)
+//        val adapter = CustomAdapterHome(recyclervieww,dataHome,listdata1, listdata2,listdata3,listdata4,listdata5,arrayItemList, requireContext(), "detail_cite", intent)
 
     //    recyclervieww.itemAnimator=DefaultItemAnimator()
       //  recyclervieww.adapter = adapter

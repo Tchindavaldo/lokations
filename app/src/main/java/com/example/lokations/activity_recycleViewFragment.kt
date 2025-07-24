@@ -3,6 +3,7 @@ package com.example.lokations
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -136,9 +137,10 @@ class activity_recycleViewFragment : AppCompatActivity() {
       itemList.add(dataClass_img_home_slide(R.drawable.m91,"cité Hypocrate","5 chambre en cour de l'iberartion, 2 chambre disponible"))
 
 
+        val intent: Intent = Intent(this, FrameLayoutActivity::class.java)
 
       val adapter = adapteur_recycleView_framelayout_home_data(data,itemList,listData1,listData2,listData3,listData4,listData5,itemList,
-          recyclervieww    ,0,this)
+          recyclervieww    ,0,intent,this)
 
         recyclervieww.layoutManager = LinearLayoutManager(this)
         recyclervieww.adapter = adapter

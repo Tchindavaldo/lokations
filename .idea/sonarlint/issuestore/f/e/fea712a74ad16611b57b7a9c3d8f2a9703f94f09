@@ -1,0 +1,44 @@
+
+5kotlin:S125R"Remove this commented out code.(¼òƒ
+6kotlin:S125W"Remove this commented out code.(ÚÕâÏ
+5kotlin:S125["Remove this commented out code.(‡ÍJ
+;kotlin:S125c"Remove this commented out code.(‡£“‚ÿÿÿÿÿ
+7kotlin:S125ˆ"Remove this commented out code.(¡Û‚Ğ
+okotlin:S117T"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(š–Ş„úÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(‡ Ô©ùÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(İ˜Æ‚
+7kotlin:S1128"Remove this unused import.(™¬±öúÿÿÿÿ
+1kotlin:S1128"Remove this unused import.(âG
+2kotlin:S1128"Remove this unused import.(üƒŠ¸
+2kotlin:S1128
+"Remove this unused import.(ï‡Û™
+2kotlin:S1128"Remove this unused import.( ¯–
+7kotlin:S1128"Remove this unused import.(œô”şúÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(˜»ˆ
+7kotlin:S1128"Remove this unused import.(ÊÒÅ­ùÿÿÿÿ
+7kotlin:S1128"Remove this unused import.(ò“ì­üÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(Ë÷Üª
+7kotlin:S1128("Remove this unused import.(’—ÄÑùÿÿÿÿ
+2kotlin:S1128)"Remove this unused import.(É§±¬
+2kotlin:S1128*"Remove this unused import.( ¬Âö
+2kotlin:S1128+"Remove this unused import.(Õ‚óî
+2kotlin:S1128,"Remove this unused import.(‚¼êæ
+7kotlin:S1128-"Remove this unused import.(Ôê³¨ÿÿÿÿÿ
+7kotlin:S1128."Remove this unused import.(èãÊõûÿÿÿÿ
+7kotlin:S1128/"Remove this unused import.(£ñ¹¸ûÿÿÿÿ
+7kotlin:S11280"Remove this unused import.(ŞŠ‹Ùüÿÿÿÿ
+7kotlin:S11281"Remove this unused import.(ø¥ş¿şÿÿÿÿ
+7kotlin:S11282"Remove this unused import.(åÉˆúÿÿÿÿÿ
+2kotlin:S11283"Remove this unused import.(Âô•Ú
+2kotlin:S11284"Remove this unused import.(Ì©î¸
+2kotlin:S11285"Remove this unused import.(ßĞÕ©
+7kotlin:S11286"Remove this unused import.(öŒÎƒÿÿÿÿÿ
+2kotlin:S11287"Remove this unused import.(´â 
+7kotlin:S11288"Remove this unused import.(Øç¯ïúÿÿÿÿ
+7kotlin:S11289"Remove this unused import.(ÂéŠùûÿÿÿÿ
+7kotlin:S1128;"Remove this unused import.(Èã°‚øÿÿÿÿ
+_kotlin:S101="HRename class "login" to match the regular expression ^[A-Z][a-zA-Z0-9]*$(ôáıá
+;kotlin:S1874H"#Deprecated code should not be used.(ìûşñ
+;kotlin:S1874H"#Deprecated code should not be used.(ìûşñ
+;kotlin:S1874H"#Deprecated code should not be used.(ìûşñ
+;kotlin:S1874H"#Deprecated code should not be used.(ìûşñ

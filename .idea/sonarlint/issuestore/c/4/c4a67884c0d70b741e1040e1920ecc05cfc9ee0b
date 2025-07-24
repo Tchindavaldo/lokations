@@ -1,0 +1,14 @@
+
+Ykotlin:S1172e"<Use "_" instead of this unused lambda parameter "exception".(³Ø˜·úÿÿÿÿ
+jkotlin:S1170"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(äÛ›Á
+jkotlin:S1171"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ø”€Ž
+okotlin:S1173"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(µ—¶…ùÿÿÿÿ
+Okotlin:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ
+Okotlin:S1135"2Complete the task associated to this TODO comment.(ðï¢öúÿÿÿÿ
+Pkotlin:S1135€"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ
+3kotlin:S6530G"Remove this unchecked cast.(šÊºë
+Fkotlin:S1481N")Remove this unused "prix" local variable.(ï­ñ¶úÿÿÿÿ
+2kotlin:S1128"Remove this unused import.(¿îû•
+ykotlin:S101"]Rename class "Fragment_boutique_boutique" to match the regular expression ^[A-Z][a-zA-Z0-9]*$(ËÉ°¿ùÿÿÿÿ
+bkotlin:S1192]"JDefine a constant instead of duplicating this literal "chambre 2" 4 times.(³ê£…
+Dkotlin:S6518G",Replace function call with indexed accessor.(šÊºë
