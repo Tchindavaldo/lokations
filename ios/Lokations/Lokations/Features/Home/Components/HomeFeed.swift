@@ -47,7 +47,7 @@ struct HomeLigneRow: View {
             VStack(alignment: .leading, spacing: 0) {
                 HomeLigne2Section(cites: three, all: cites).modifier(HomeFadeIn(duration: 1.0))
                 HomeLigne3Section(cites: three, all: cites).modifier(HomeFadeIn(duration: 0.7))
-                HomeLigne4Section(cites: three.reversed(), all: cites).modifier(HomeFadeIn(duration: 0.7))
+                HomeLigne4Section(cites: Array(three.reversed()), all: cites).modifier(HomeFadeIn(duration: 0.7))
                 HomeLigne5Section(cite: three[0]).modifier(HomeFadeIn(duration: 0.7))
             }
             .padding(.horizontal, 7)

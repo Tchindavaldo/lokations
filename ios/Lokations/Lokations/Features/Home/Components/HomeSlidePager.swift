@@ -6,13 +6,13 @@ import SwiftUI
 struct HomeSlide: Identifiable {
     let id = UUID()
     let cite: Cite
-    var image: String { cite.imageName }
+    let image: String
     var titre: String { cite.name }
     var description: String {
         "\(cite.releasingRooms) chambre en cours de libération, \(cite.freeRooms) chambre disponible"
     }
 
-    static func from(_ cites: [Cite]) -> [HomeSlide] { cites.map { HomeSlide(cite: $0) } }
+    static func from(_ cites: [Cite]) -> [HomeSlide] { cites.map { HomeSlide(cite: $0, image: $0.imageName) } }
 }
 
 struct HomeSlidePager: View {

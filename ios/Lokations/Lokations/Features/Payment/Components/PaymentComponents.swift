@@ -4,9 +4,12 @@ import SwiftUI
 
 /// En-tête : CardView 55 (m6), trois textes, pastille « Paiement » (round_black_10).
 struct PaymentHeader: View {
+    let cite: Cite
+    let prix: String
+
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
-            Image("m6")
+            Image(cite.imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 55, height: 55)
@@ -14,12 +17,12 @@ struct PaymentHeader: View {
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("Cité Hypocrate")
+                Text(cite.name)
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(DS.black)
                 Spacer(minLength: 0)
-                Text("Baganté").font(.system(size: 12)).foregroundStyle(DS.blackA(50))
-                Text("Chambre10,  260 000/Ans")
+                Text("\(cite.district), \(cite.city)").font(.system(size: 12)).foregroundStyle(DS.blackA(50))
+                Text("\(cite.freeRooms) chambres libres,  \(prix)")
                     .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
                     .padding(.bottom, 5)

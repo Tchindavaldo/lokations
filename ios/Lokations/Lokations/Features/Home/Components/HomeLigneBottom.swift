@@ -4,16 +4,16 @@ import SwiftUI
 // et ligne5 ("En cours de construction", ViewPager 175dp + barre d'actions).
 
 struct HomeLigne4Section: View {
-    let cite: (Int) -> Cite
-    private let images = ["m6", "m7", "m91"]
+    let cites: [Cite]
+    let all: [Cite]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HomeLigneHeader(title: "Top qualité")
+            HomeLigneHeader(title: "Top qualité", cites: all)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
-                    ForEach(images.indices, id: \.self) { i in
-                        NavigationLink(value: cite(i)) { HomeLigne4Card(image: images[i]) }
+                    ForEach(cites.indices, id: \.self) { i in
+                        NavigationLink(value: cites[i]) { HomeLigne4Card(cite: cites[i]) }
                     }
                 }
                 .buttonStyle(.plain)
@@ -24,19 +24,18 @@ struct HomeLigne4Section: View {
 }
 
 struct HomeLigne4Card: View {
-    let image: String
+    let cite: Cite
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ZStack(alignment: .bottom) {
-                Image(image).resizable().scaledToFill()
+                Image(cite.imageName).resizable().scaledToFill()
                     .frame(width: 150, height: 230).clipped()
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 0) {
-                        HomeText("Cité niva", 10, DS.white, bold: true)
-                        HomeText("chambre3", 10, DS.white).padding(.leading, 2)
+                        HomeText(cite.name, 10, DS.white, bold: true)
                     }
-                    HomeText("actuellement disponible", 10, DS.whiteA(70)).padding(.top, 3)
+                    HomeText("\(cite.freeRooms) chambres disponibles", 10, DS.whiteA(70)).padding(.top, 3)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 7).padding(.top, 3).padding(.bottom, 2)
@@ -47,7 +46,7 @@ struct HomeLigne4Card: View {
             .background(RoundedRectangle(cornerRadius: 10).fill(DS.blackA(5)))
             HStack(alignment: .bottom, spacing: 0) {
                 HStack(alignment: .firstTextBaseline, spacing: 0) {
-                    HomeText("235 000", 10, DS.black, bold: true)
+                    HomeText(homePrice(cite.pricePerMonth), 10, DS.black, bold: true)
                     HomeText(" /", 8, DS.blackA(75), bold: true)
                     HomeText("Mois", 8, DS.blackA(75), bold: true)
                 }
@@ -55,7 +54,7 @@ struct HomeLigne4Card: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 HomeScoreBadge(fill: DS.black, trailing: 4).padding(.trailing, 3)
                 HStack(spacing: 0) {
-                    HomeText("bastos", 8, DS.white)
+                    HomeText(cite.district, 8, DS.white)
                     Image("plce").resizable().scaledToFit().frame(width: 12, height: 12)
                 }
                 .padding(.leading, 4).padding(.top, 1).padding(.trailing, 2).padding(.bottom, 1)
@@ -68,18 +67,25 @@ struct HomeLigne4Card: View {
 }
 
 struct HomeLigne5Section: View {
+    let cite: Cite
+    @EnvironmentObject private var favorites: FavoritesStore
+    @State private var showNotifications = false
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
                 HomeText("En cours de construction", 15, DS.black, bold: true)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                HStack(spacing: 0) {
+                Button { showNotifications = true } label: {
+                    HStack(spacing: 0) {
                     HomeText("Notification", 13, DS.blackA(50), bold: true).padding(.trailing, 3)
                     Image("ic_baseline_notifications_none_24").resizable().scaledToFit()
                         .frame(width: 18, height: 18)
+                    }
                 }
+                .buttonStyle(.plain)
             }
-            HomeSlidePager(slides: HomeSlide.all)
+            HomeSlidePager(slides: cite.gallery.map { HomeSlide(cite: cite, image: $0) })
                 .frame(height: 175)
                 .background(RoundedRectangle(cornerRadius: 10).fill(DS.blackA(5)))
                 .padding(.top, 15)
@@ -101,14 +107,23 @@ struct HomeLigne5Section: View {
                 .frame(width: 10, height: 10)
                 .padding(.horizontal, 3)
                 HomeText("4.5", 10, DS.black).padding(.trailing, 5)
-                Image("favoris").resizable().scaledToFit().frame(width: 13, height: 13).padding(.trailing, 5)
-                HomeText("reserver", 10, DS.white)
-                    .padding(.vertical, 4).padding(.horizontal, 12)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(DS.black))
+                Button { favorites.toggle(cite) } label: {
+                    Image("favoris").resizable().scaledToFit().frame(width: 13, height: 13)
+                        .opacity(favorites.contains(cite) ? 1 : 0.4)
+                }
+                .buttonStyle(.plain)
+                .padding(.trailing, 5)
+                NavigationLink(value: cite) {
+                    HomeText("reserver", 10, DS.white)
+                        .padding(.vertical, 4).padding(.horizontal, 12)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(DS.black))
+                }
+                .buttonStyle(.plain)
             }
             .padding(.top, 5)
             .padding(.horizontal, 1)
         }
         .padding(.bottom, 35)
+        .sheet(isPresented: $showNotifications) { NotificationsView() }
     }
 }
