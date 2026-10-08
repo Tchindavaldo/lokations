@@ -92,6 +92,8 @@ Composants système (`NavigationStack`, `.sheet`, `ScrollView`, `TabView(.page)`
 L'app iOS est une **copie exacte** du design Android (`app/src/main/res/layout`,
 `drawable`, `values`). Chaque écran reproduit son layout XML : mêmes images, icônes,
 couleurs, textes, tailles (1 dp = 1 pt, 1 sp = 1 pt), marges, rayons, ordre des
-éléments. Rien d'inventé : pas de composant système qui change l'apparence
-(pas de `List`/`Form`/`TabView` stylés iOS si le XML dessine autre chose).
+éléments. Rien d'inventé. On garde quand même les composants iOS natifs récents tant que le
+rendu reste celui d'Android : `TabView` natif (Liquid Glass sur iOS 26) avec les
+icônes et l'ordre Android, `.glassEffect()` sous `if #available(iOS 26, *)` (repli
+iOS 17 sur le style Android), `NavigationStack`, `.sheet`, gestes, haptique.
 Chaque vue indique en en-tête le layout XML qu'elle reproduit.
