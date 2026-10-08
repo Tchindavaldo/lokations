@@ -75,7 +75,7 @@ Les modèles, services et utilitaires sans rendu restent partagés.
 ## R11 — Builds : TOUJOURS demander avant (OBLIGATOIRE)
 
 Aucun build ni test sans accord explicite. Les builds iOS passent par
-**GitHub Actions** (`.github/workflows/ios-testflight.yml`, schéma partagé `Lokations`). Sans build, vérifier par relecture
+**Xcode Cloud** (lancement manuel, schéma partagé `Lokations`, post-action TestFlight). Sans build, vérifier par relecture
 et le dire en 1 phrase.
 
 ## R12 — Couleurs & dimensions : design system `DS` uniquement (OBLIGATOIRE)

@@ -11,7 +11,7 @@ Backend : Firebase Auth (email / mot de passe) + Firestore, via Swift Package Ma
 | Navigation | `TabView` (5 onglets) + `NavigationStack` par onglet |
 | État partagé | `ObservableObject` injectés par `.environmentObject` |
 | Backend | FirebaseCore, FirebaseAuth, FirebaseFirestore (SPM, 12.x) |
-| CI | GitHub Actions -> TestFlight (`.github/workflows/ios-testflight.yml`) |
+| CI | Xcode Cloud (Start Build manuel) -> TestFlight |
 
 ## Arborescence
 
@@ -74,14 +74,9 @@ ios/
 Sans `GoogleService-Info.plist` dans le bundle, `AppConfig.firebaseEnabled == false` :
 connexion acceptée localement et produits gardés en mémoire.
 
-## Build et TestFlight (GitHub Actions)
+## Build et TestFlight (Xcode Cloud)
 
-Workflow `.github/workflows/ios-testflight.yml` : runner macOS, signature cloud Apple via clé API,
-envoi direct sur TestFlight. Se lance à chaque push sur `ios/**` (branches `feature/ios-native`, `main`)
-ou à la main (onglet Actions > Run workflow). Numéro de build = numéro de run GitHub.
-
-Secrets GitHub : `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8_B64` (clé rôle Admin, .p8 en base64),
-`APPLE_TEAM_ID`, et optionnellement `GOOGLE_SERVICE_INFO_PLIST_B64`
-(app iOS déclarée dans Firebase avec le bundle `com.rauval.lokation`).
-
-`ci_scripts/ci_post_clone.sh` reste prêt si l'app est un jour branchée sur Xcode Cloud.
+Workflow Xcode Cloud « Default » : condition de départ manuelle (Start Build), action Archive iOS,
+post-action TestFlight Internal Testing. `ci_scripts/ci_post_clone.sh` résout les packages SPM et
+injecte `GoogleService-Info.plist` depuis la variable secrète `GOOGLE_SERVICE_INFO_PLIST_B64`
+(sinon mode démo). Choisir Xcode 26+ dans Environment pour Liquid Glass.
