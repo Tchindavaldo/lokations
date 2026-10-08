@@ -63,34 +63,36 @@ struct CiteChambreInfoRow: View {
                         .padding(.bottom, 5)
                     Spacer(minLength: 0)
                     HStack(spacing: 5) {
-                        label("loyer", 9); value("400 000/Ans")
+                        label("loyer", 12); value("400 000/Ans")
                     }
                     .padding(.bottom, 4)
                     HStack(spacing: 0) {
-                        label("Payer", 9)
+                        label("Payer", 12)
                         value("400 000").padding(.leading, 5)
-                        label("Impayé", 10).padding(.leading, 8)
+                        label("Impayé", 12).padding(.leading, 8)
                         value("00 000f").padding(.leading, 5)
                     }
                     .padding(.bottom, 4)
                     HStack(spacing: 5) {
-                        label("Locataire", 9); value("Tchinda Valdo blair")
+                        label("Locataire", 12); value("Tchinda Valdo blair")
                     }
                     .padding(.bottom, 5)
                 }
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
                 .padding(.leading, 5)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
 
                 VStack(spacing: 0) {
                     Text("Occupé")
-                        .font(.system(size: 11, weight: .bold))
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundStyle(DS.android(0x004288))
                     Spacer(minLength: 0)
                     VStack(spacing: 5) {
                         Text("FIn Contrat").foregroundStyle(DS.blackA(50))
                         Text("05 - 08 - 2025").foregroundStyle(DS.black)
                     }
-                    .font(.system(size: 9, weight: .bold))
+                    .font(.system(size: 12, weight: .bold))
                     .padding(.horizontal, 7)
                     .padding(.vertical, 5)
                     .background(DS.blackA(5), in: RoundedRectangle(cornerRadius: 15))
@@ -101,12 +103,14 @@ struct CiteChambreInfoRow: View {
 
             HStack(spacing: 5) {
                 ForEach(["rappel", "Contacter", "Modifier", "Résilier"], id: \.self) { action in
+                    CiteChambreInfoLink(action: action) {
                     Text(action)
-                        .font(.system(size: 9))
+                        .font(.system(size: 12))
                         .foregroundStyle(DS.black)
                         .padding(.horizontal, 7)
                         .padding(.vertical, 3)
                         .background(DS.blackA(10), in: RoundedRectangle(cornerRadius: 15))
+                    }
                 }
             }
             .padding(.top, 5)
@@ -120,7 +124,7 @@ struct CiteChambreInfoRow: View {
     }
 
     private func value(_ text: String) -> some View {
-        Text(text).font(.system(size: 10, weight: .bold)).foregroundStyle(DS.blackA(50))
+        Text(text).font(.system(size: 12, weight: .bold)).foregroundStyle(DS.blackA(50))
     }
 }
 
@@ -138,7 +142,7 @@ struct CiteChambreInfo2View: View {
                         .background(DS.blackA(10), in: RoundedRectangle(cornerRadius: 15))
                     Spacer(minLength: 0)
                     Text("Occupé")
-                        .font(.system(size: 10, weight: .bold))
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundStyle(DS.android(0x004288))
                 }
                 .padding(.leading, 5)
@@ -162,7 +166,7 @@ struct CiteChambreInfo2View: View {
 
     private func row(_ label: String, _ value: String) -> some View {
         HStack {
-            Text(label).font(.system(size: 10)).foregroundStyle(DS.black)
+            Text(label).font(.system(size: 12)).foregroundStyle(DS.black)
             Spacer(minLength: 0)
             Text(value).font(.system(size: 12, weight: .bold)).foregroundStyle(DS.blackA(50))
         }
@@ -176,8 +180,12 @@ struct CiteChambreInfoAction: View {
     let text: String
 
     var body: some View {
+        CiteChambreInfoLink(action: text) { label }
+    }
+
+    private var label: some View {
         Text(text)
-            .font(.system(size: 9, weight: .bold))
+            .font(.system(size: 12, weight: .bold))
             .foregroundStyle(DS.black)
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
@@ -215,7 +223,7 @@ struct CiteChambreInfo4View: View {
             Spacer(minLength: 0)
             Text(value).foregroundStyle(valueColor)
         }
-        .font(.system(size: 11, weight: .bold))
+        .font(.system(size: 12, weight: .bold))
         .padding(.leading, 15)
         .padding(.top, 10)
     }
@@ -234,7 +242,7 @@ struct CiteChambreInfo4View: View {
                 Spacer(minLength: 0)
                 Text("400 000f/Ans").foregroundStyle(DS.blackA(50)).padding(.bottom, 3)
             }
-            .font(.system(size: 11, weight: .bold))
+            .font(.system(size: 12, weight: .bold))
             .padding(.leading, 15)
             .frame(maxHeight: .infinity)
 
@@ -250,12 +258,27 @@ struct CiteChambreInfo4View: View {
             Text(label).foregroundStyle(DS.black)
             Text(value).foregroundStyle(color)
         }
-        .font(.system(size: 11, weight: .bold))
+        .font(.system(size: 12, weight: .bold))
         .padding(.top, -5)
         .padding(.horizontal, 12)
         .padding(.vertical, 7)
         .frame(width: 75)
         .background(DS.blackA(10), in: RoundedRectangle(cornerRadius: 15))
         .padding(.leading, 15)
+    }
+}
+
+/// « Contacter » ouvre le composeur (tel:) au lieu d'un bouton inactif ; les autres
+/// actions restent de simples pastilles tant qu'aucun flux n'existe côté iOS.
+struct CiteChambreInfoLink<Label: View>: View {
+    let action: String
+    @ViewBuilder let label: () -> Label
+
+    var body: some View {
+        if action == "Contacter", let url = URL(string: "tel:\(CiteDetailInfo.contactPhone)") {
+            Link(destination: url, label: label)
+        } else {
+            label()
+        }
     }
 }

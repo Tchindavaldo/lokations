@@ -90,10 +90,10 @@ struct CiteCommentView: View {
                     .foregroundStyle(DS.black)
                 Spacer(minLength: 0)
                 Text("construction terminé")
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
                 Text("de la cité des anges à Douala au quartier bonapriso")
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
             }
             .padding(.leading, 15)

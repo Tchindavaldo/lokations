@@ -51,7 +51,7 @@ struct PaymentView: View {
 
             VStack(alignment: .leading, spacing: 5) {
                 Text("Numero OM")
-                    .font(.system(size: 11))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.black)
                     .padding(.leading, 5)
                 TextField("", text: $numero)
@@ -66,7 +66,7 @@ struct PaymentView: View {
 
             HStack {
                 Text("Payement en plusieurs tranches")
-                    .font(.system(size: 11))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.black)
                 Spacer(minLength: 0)
                 PaymentSwitch(isOn: $tranches)
@@ -97,8 +97,8 @@ struct PaymentView: View {
 
     private func column(_ label: String, _ value: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(label).font(.system(size: 11)).foregroundStyle(DS.black)
-            Text(value).font(.system(size: 10)).foregroundStyle(DS.blackA(50))
+            Text(label).font(.system(size: 12)).foregroundStyle(DS.black)
+            Text(value).font(.system(size: 12)).foregroundStyle(DS.blackA(50))
         }
         .padding(.bottom, 2)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -115,7 +115,7 @@ struct PaymentView: View {
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("Contrat de bail de location")
-                    .font(.system(size: 11))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.black)
                     .padding(.leading, 9)
                 Spacer(minLength: 0)
@@ -134,7 +134,7 @@ struct PaymentView: View {
             Spacer(minLength: 0)
 
             Text("Telecharger")
-                .font(.system(size: 11))
+                .font(.system(size: 12))
                 .foregroundStyle(DS.black)
                 .padding(.horizontal, 7)
                 .padding(.vertical, 5)
@@ -147,7 +147,7 @@ struct PaymentView: View {
         HStack(alignment: .firstTextBaseline) {
             Text(label).font(.system(size: 12)).foregroundStyle(DS.blackA(50))
             Spacer(minLength: 0)
-            Text(value).font(.system(size: 11, weight: .bold)).foregroundStyle(DS.black)
+            Text(value).font(.system(size: 12, weight: .bold)).foregroundStyle(DS.black)
         }
         .padding(.top, 20)
     }

@@ -1,68 +1,84 @@
 import SwiftUI
 
 // Reproduit : res/layout/activity_ajout_produit.xml (activity_ajout_produit.kt) et
-// res/layout/activity_update_produit.xml (activity_update_produit.kt) : 5 champs 45dp
-// @drawable/round_black_25_15, mentions 10sp, case 13dp, 2 boutons noirs rayon 25dp.
-// Champ 1 = item, champ "Mot de pase" = prix, champ 2 (modification) = index a modifier.
+// res/layout/activity_update_produit.xml (activity_update_produit.kt) : champs 45dp
+// @drawable/round_black_25_15, mentions + case 13dp, boutons noirs rayon 25dp.
+// Bugs Android corriges (R13) : titre/mentions lisibles, champs de test retires
+// (seuls Nom = item et Prix = prix sont enregistres), un seul bouton d'ajout,
+// modification du produit touche (plus de numero tape), validation sous condition.
 struct BoutiqueProductFormView: View {
-    enum Mode: String, Identifiable {
-        case add, update
-        var id: String { rawValue }
+    enum Mode: Identifiable {
+        case add
+        case edit(Product)
+
+        var id: String {
+            switch self {
+            case .add: "add"
+            case .edit(let product): product.id.uuidString
+            }
+        }
     }
 
     let mode: Mode
 
     @EnvironmentObject private var store: BoutiqueStore
-    @State private var item = "Nom"
-    @State private var second: String
-    @State private var email = "Email"
-    @State private var phone = "Numero Tel"
-    @State private var prix = "Mot de pase"
+    @Environment(\.dismiss) private var dismiss
+    @State private var item = ""
+    @State private var prix = ""
     @State private var accepted = false
+    @State private var isSaving = false
 
-    init(mode: Mode) {
-        self.mode = mode
-        _second = State(initialValue: mode == .add ? "Prenom" : "id a modifié")
+    private var isValid: Bool {
+        !item.trimmingCharacters(in: .whitespaces).isEmpty
+            && !prix.trimmingCharacters(in: .whitespaces).isEmpty
+            && accepted && !isSaving
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Inscriez vous pour continuer")
+            Text(title)
                 .font(.system(size: 13, weight: .bold))
-                .foregroundStyle(DS.white)
+                .foregroundStyle(DS.black)
                 .padding(.bottom, 5)
-            BoutiqueProductField(icon: "ic_baseline_person_outline_24", text: $item)
-            BoutiqueProductField(icon: "ic_baseline_person_outline_24", text: $second).padding(.top, 20)
-            BoutiqueProductField(icon: "ic_baseline_person_outline_24", text: $email).padding(.top, 20)
-            BoutiqueProductField(icon: "ic_baseline_call2_24", text: $phone).padding(.top, 20)
-            BoutiqueProductField(icon: "ic_baseline_lock_24", text: $prix,
-                                 trailingIcon: "ic_baseline_visibility_24")
+            BoutiqueProductField(icon: "ic_baseline_person_outline_24", placeholder: "Nom", text: $item)
+            BoutiqueProductField(icon: "ic_baseline_lock_24", placeholder: "Prix", text: $prix)
+                .keyboardType(.numberPad)
                 .padding(.top, 20)
             terms.padding(.top, 10)
             HStack(spacing: 0) {
                 switch mode {
                 case .add:
-                    button("Ajouter le produit") { await add() }
-                    button("Ajouter set") { await add() }
-                case .update:
-                    button("modifier") { await modify() }
-                    button("supprimer") { await remove() }
+                    button("Ajouter le produit") { await store.add(Product(item: item, prix: prix)) }
+                case .edit(let product):
+                    button("modifier") {
+                        var updated = product
+                        updated.item = item
+                        updated.prix = prix
+                        return await store.update(updated)
+                    }
+                    button("supprimer", enabled: !isSaving) { await store.delete(product) }
                 }
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 35)
         }
+        .padding(.top, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(DS.white)
         .modifier(BoutiqueToastModifier())
         .onAppear(perform: prefill)
     }
 
+    private var title: String {
+        if case .edit = mode { return "Modifier le produit" }
+        return "Ajouter un produit"
+    }
+
     private var terms: some View {
         HStack(alignment: .bottom, spacing: 0) {
             Text("En vous inscrivant vous acceptez nos conditions d'utilisation, notre politique de confidentialité et notre utilisation des cookies.")
-                .font(.system(size: 10))
-                .foregroundStyle(DS.whiteA(50))
+                .font(.system(size: 12))
+                .foregroundStyle(DS.blackA(50))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.trailing, 15)
             Button { accepted.toggle() } label: {
@@ -72,62 +88,46 @@ struct BoutiqueProductFormView: View {
                     .overlay {
                         if accepted {
                             Image(systemName: "checkmark")
-                                .font(.system(size: 8, weight: .bold))
+                                .font(.system(size: 9, weight: .bold))
                                 .foregroundStyle(DS.white)
                         }
                     }
+                    .padding(8)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .padding(-8)
         }
     }
 
-    private func button(_ title: String, action: @escaping () async -> Void) -> some View {
-        Button {
-            Task { await action() }
+    private func button(_ label: String, enabled: Bool? = nil,
+                        action: @escaping () async -> Bool) -> some View {
+        let isEnabled = enabled ?? isValid
+        return Button {
+            Task {
+                isSaving = true
+                let ok = await action()
+                isSaving = false
+                if ok { dismiss() }
+            }
         } label: {
-            Text(title)
+            Text(label)
                 .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(DS.white)
                 .padding(10)
                 .frame(height: 50)
                 .background(DS.black)
                 .clipShape(RoundedRectangle(cornerRadius: 25))
+                .opacity(isEnabled ? 1 : 0.5)
         }
         .buttonStyle(.plain)
+        .disabled(!isEnabled)
     }
 
-    // MARK: Comportement (Firestore via BoutiqueStore)
-
-    /// activity_update_produit.kt : pre-remplit avec listOfUsers[0].
     private func prefill() {
-        guard mode == .update, let first = store.products.first else { return }
-        item = first.item
-        prix = first.prix
-    }
-
-    private func add() async {
-        _ = await store.add(Product(item: item, prix: prix))
-    }
-
-    private func targetIndex() -> Int? {
-        let raw = second.trimmingCharacters(in: .whitespaces)
-        guard let index = Int(raw), store.products.indices.contains(index) else {
-            store.feedback = BoutiqueStore.Feedback(message: "erreur : id invalide", isError: true)
-            return nil
-        }
-        return index
-    }
-
-    private func modify() async {
-        guard let index = targetIndex() else { return }
-        var product = store.products[index]
-        product.item = item
-        product.prix = prix
-        _ = await store.update(product)
-    }
-
-    private func remove() async {
-        guard let index = targetIndex() else { return }
-        _ = await store.delete(store.products[index])
+        guard case .edit(let product) = mode else { return }
+        item = product.item
+        prix = product.prix
+        accepted = true
     }
 }

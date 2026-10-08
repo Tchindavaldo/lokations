@@ -4,6 +4,7 @@ import SwiftUI
 // icone 14x16 (poids 0.2) + EditText 15sp gras white_50 (poids 1) [+ icone visibilite (poids 0.2)].
 struct BoutiqueProductField: View {
     let icon: String
+    let placeholder: String
     @Binding var text: String
     var trailingIcon: String?
 
@@ -12,9 +13,9 @@ struct BoutiqueProductField: View {
             let unit = geo.size.width / (trailingIcon == nil ? 1.2 : 1.4)
             HStack(spacing: 0) {
                 iconBox(icon).frame(width: unit * 0.2)
-                TextField("", text: $text)
+                TextField("", text: $text, prompt: Text(placeholder).foregroundStyle(DS.whiteA(70)))
                     .font(.system(size: 15, weight: .bold))
-                    .foregroundStyle(DS.whiteA(50))
+                    .foregroundStyle(DS.white)
                     .tint(DS.white)
                     .padding(.horizontal, 4)
                     .frame(width: unit, alignment: .leading)

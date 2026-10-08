@@ -11,7 +11,13 @@ struct HomeText: View {
 
     init(_ text: String, _ size: CGFloat, _ color: Color, bold: Bool = false) {
         self.text = text
-        self.size = size
+        // Tailles Android agrandies pour la lisibilité iOS (R13) : min 12 pt, titres 16 pt.
+        switch size {
+        case ..<12: self.size = 12
+        case 12..<14: self.size = 14
+        case 15: self.size = 16
+        default: self.size = size
+        }
         self.color = color
         self.bold = bold
     }

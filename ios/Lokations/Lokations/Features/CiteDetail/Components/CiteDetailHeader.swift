@@ -22,10 +22,10 @@ struct CiteDetailHeader: View {
                     .foregroundStyle(DS.black)
                 Spacer(minLength: 0)
                 Text("Baganté")
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
                 Text("Chambre10,  260 000/Ans")
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
                     .padding(.bottom, 5)
             }

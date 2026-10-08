@@ -18,9 +18,9 @@ struct PaymentHeader: View {
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(DS.black)
                 Spacer(minLength: 0)
-                Text("Baganté").font(.system(size: 10)).foregroundStyle(DS.blackA(50))
+                Text("Baganté").font(.system(size: 12)).foregroundStyle(DS.blackA(50))
                 Text("Chambre10,  260 000/Ans")
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
                     .padding(.bottom, 5)
             }
@@ -51,7 +51,7 @@ struct PaymentTabs: View {
                 ForEach(titles.indices, id: \.self) { i in
                     Button { withAnimation(.easeInOut(duration: 0.25)) { selected = i } } label: {
                         Text(titles[i].uppercased())
-                            .font(.system(size: 9, weight: .medium))
+                            .font(.system(size: 12, weight: .medium))
                             .foregroundStyle(DS.black)
                             .fixedSize()
                             .overlay(alignment: .bottom) {

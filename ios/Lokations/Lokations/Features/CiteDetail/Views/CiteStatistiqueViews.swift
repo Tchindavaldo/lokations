@@ -32,7 +32,7 @@ struct CiteStatistiquePeriodeView: View {
                         ForEach(periode.titles.indices, id: \.self) { i in
                             Button { selected = i } label: {
                                 Text(periode.titles[i])
-                                    .font(.system(size: 10))
+                                    .font(.system(size: 12))
                                     .foregroundStyle(selected == i ? DS.black : DS.blackA(50))
                                     .fixedSize()
                                     .padding(.leading, periode.tabPadding.start)

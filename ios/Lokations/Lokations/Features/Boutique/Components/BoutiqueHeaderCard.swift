@@ -69,7 +69,7 @@ struct BoutiqueHeaderCard: View {
     private func revenue(_ value: String) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Revenu Mensuel")
-                .font(.system(size: 10))
+                .font(.system(size: 12))
                 .foregroundStyle(DS.blackA(50))
             Text(value)
                 .font(.system(size: 14, weight: .bold))
@@ -79,7 +79,7 @@ struct BoutiqueHeaderCard: View {
     }
 }
 
-/// TabLayout scrollable centre, texte 9sp majuscules (TextAppearance.Design.Tab),
+/// TabLayout scrollable centre, texte 9sp (agrandi a 12 pt) majuscules (TextAppearance.Design.Tab),
 /// indicateur noir largeur du texte (tabIndicatorFullWidth=false).
 struct BoutiqueTabStrip: View {
     let titles: [String]
@@ -100,7 +100,7 @@ struct BoutiqueTabStrip: View {
 
     private func tab(_ index: Int) -> some View {
         let label = Text(titles[index].uppercased())
-            .font(.system(size: 9, weight: .medium))
+            .font(.system(size: 12, weight: .medium))
         return Button {
             withAnimation { selection = index }
         } label: {

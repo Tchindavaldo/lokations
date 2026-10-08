@@ -9,8 +9,8 @@ struct SearchToolbar: View {
     var body: some View {
         HStack(spacing: 0) {
             HStack(spacing: 0) {
-                TextField("", text: $query)
-                    .font(.system(size: 18))
+                TextField("Rechercher", text: $query)
+                    .font(.system(size: 14))
                     .foregroundStyle(DS.black)
                     .padding(.horizontal, 4)
                     .frame(width: 135, height: 35)

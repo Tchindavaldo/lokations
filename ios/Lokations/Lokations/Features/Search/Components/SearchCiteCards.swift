@@ -20,7 +20,7 @@ struct SearchCiteCardLarge: View {
                         .font(.system(size: 12))
                         .foregroundStyle(DS.blackA(50))
                         .padding(.top, 4)
-                    Spacer(minLength: 35)
+                    Spacer(minLength: 20)
                     Text("\(cite.pricePerMonth.formatted()) F")
                         .font(.system(size: 12))
                         .foregroundStyle(DS.blackA(70))
@@ -94,5 +94,7 @@ struct SearchCiteInfoColumn: View {
                 .font(.system(size: 12))
                 .foregroundStyle(DS.blackA(70))
         }
+        .lineLimit(1)
+        .minimumScaleFactor(0.75)
     }
 }
