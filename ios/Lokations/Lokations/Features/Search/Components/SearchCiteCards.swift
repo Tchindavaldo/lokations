@@ -16,13 +16,13 @@ struct SearchCiteCardLarge: View {
                 SearchCiteInfoColumn(cite: cite)
                 Spacer(minLength: 0)
                 VStack(alignment: .trailing, spacing: 0) {
-                    Text("fv  lv  ds")
-                        .font(.system(size: 9))
+                    Text(cite.district)
+                        .font(.system(size: 12))
                         .foregroundStyle(DS.blackA(50))
                         .padding(.top, 4)
                     Spacer(minLength: 35)
-                    Text("fv  lv")
-                        .font(.system(size: 9))
+                    Text("\(cite.pricePerMonth.formatted()) F")
+                        .font(.system(size: 12))
                         .foregroundStyle(DS.blackA(70))
                 }
             }
@@ -52,13 +52,13 @@ struct SearchCiteCardSmall: View {
                 SearchCiteInfoColumn(cite: cite)
                 Spacer(minLength: 0)
                 VStack(alignment: .trailing, spacing: 0) {
-                    Text("fv  lv  ds")
-                        .font(.system(size: 9))
+                    Text(cite.district)
+                        .font(.system(size: 12))
                         .foregroundStyle(DS.blackA(70))
                         .padding(.top, 4)
                     Spacer(minLength: 0)
-                    Text("fv  lv")
-                        .font(.system(size: 9))
+                    Text("\(cite.pricePerMonth.formatted()) F")
+                        .font(.system(size: 12))
                         .foregroundStyle(DS.blackA(70))
                 }
             }
@@ -79,18 +79,19 @@ struct SearchCiteInfoColumn: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(cite.name)
-                .font(.system(size: 12, weight: .bold))
+                .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(DS.black)
+                .lineLimit(1)
                 .padding(.top, 4)
             Text("\(cite.totalRooms) chambre")
-                .font(.system(size: 8))
+                .font(.system(size: 12))
                 .foregroundStyle(DS.blackA(70))
                 .padding(.top, 4)
             Text("\(cite.freeRooms) chambre libre")
-                .font(.system(size: 8))
+                .font(.system(size: 12))
                 .foregroundStyle(DS.blackA(70))
-            Text("\(cite.releasingRooms) en cours de l'iberation")
-                .font(.system(size: 8))
+            Text("\(cite.releasingRooms) en cours de libération")
+                .font(.system(size: 12))
                 .foregroundStyle(DS.blackA(70))
         }
     }
