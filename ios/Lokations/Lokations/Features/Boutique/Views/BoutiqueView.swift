@@ -1,30 +1,42 @@
 import SwiftUI
 
-/// Boutique du bailleur (équivalent fragment_boutique + sous-onglets).
+// Reproduit : res/layout/fragment_boutique.xml (fragment_boutique.kt + Adapter_boutique.kt).
+// En-tete #E6E0E3 (34 % de la hauteur, coins bas 35) + TabLayout puis ViewPager2 a 4 pages :
+// Transaction, Statistique, Boutique, Publicite. Fondu de l'en-tete 2000 ms (onResume).
 struct BoutiqueView: View {
-    enum Tab: String, CaseIterable, Identifiable {
-        case products = "Produits", history = "Historique", stats = "Statistiques"
-        var id: String { rawValue }
-    }
+    @State private var page = 0
+    @State private var headerOpacity = 0.0
 
-    @State private var tab: Tab = .products
+    private let titles = ["Transaction", "Statistique", "Boutique", "Publicité"]
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                Picker("Section", selection: $tab) {
-                    ForEach(Tab.allCases) { Text($0.rawValue).tag($0) }
-                }
-                .pickerStyle(.segmented)
-                .padding(DS.Space.md)
+            GeometryReader { geo in
+                VStack(spacing: 0) {
+                    BoutiqueHeaderCard(
+                        width: geo.size.width,
+                        height: max(geo.size.height * 0.34 - 35, 0),
+                        titles: titles,
+                        selection: $page
+                    )
+                    .opacity(headerOpacity)
 
-                switch tab {
-                case .products: BoutiqueProductsList()
-                case .history: BoutiqueHistoryList()
-                case .stats: BoutiqueStatsView()
+                    TabView(selection: $page) {
+                        BoutiqueTransactionPage().tag(0)
+                        BoutiqueStatistiquePage().tag(1)
+                        BoutiqueShopPage().tag(2)
+                        BoutiquePubPage().tag(3)
+                    }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
                 }
             }
-            .navigationTitle("Boutique")
+            .background(DS.white)
+            .toolbar(.hidden, for: .navigationBar)
+            .modifier(BoutiqueToastModifier())
+            .onAppear {
+                headerOpacity = 0
+                withAnimation(.easeInOut(duration: 2)) { headerOpacity = 1 }
+            }
         }
     }
 }

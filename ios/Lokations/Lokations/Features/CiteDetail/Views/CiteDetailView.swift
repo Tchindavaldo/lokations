@@ -1,71 +1,111 @@
 import SwiftUI
 
-/// Détail d'une cité (équivalent FrameLayoutActivity + fragments photo/info/comment/stat).
+// Reproduit res/layout/frame_layout.xml (FrameLayoutActivity) :
+// fragment courant plein écran + barre verticale droite (container_item_nav)
+// + barre horizontale basse (container_item_nav2). Les translations Android sont en px,
+// converties en pt pour un écran @3x (98px -> 32.7pt, 102px -> 34pt, -2px -> -0.7pt).
+// Paiement : `.sheet` natif (R13). Localisation (HomeFragment) : retour à l'accueil.
+
+enum CiteDetailPage {
+    case detail, photo, payment, comment, localisation
+}
+
+/// Données passées en extras d'intent (categori, lieux, ItemCategorie, prix).
+struct CiteDetailInfo {
+    let categorie: String
+    let itemCategorie: String
+    let lieux: String
+    let prix: String
+
+    init(cite: Cite) {
+        categorie = cite.name
+        itemCategorie = "chambre 1"
+        lieux = "\(cite.city), \(cite.district)"
+        prix = "\(Self.grouped(cite.pricePerMonth * 12)) /Ans"
+    }
+
+    static func grouped(_ value: Int) -> String {
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        f.groupingSeparator = " "
+        f.groupingSize = 3
+        return f.string(from: NSNumber(value: value)) ?? "\(value)"
+    }
+}
+
 struct CiteDetailView: View {
     let cite: Cite
 
-    enum Tab: String, CaseIterable, Identifiable {
-        case info = "Infos", rooms = "Chambres", reviews = "Avis", stats = "Stats"
-        var id: String { rawValue }
-    }
-
-    @EnvironmentObject private var favorites: FavoritesStore
-    @State private var tab: Tab = .info
+    @Environment(\.dismiss) private var dismiss
+    @State private var page: CiteDetailPage = .photo
+    /// Fond sélectionné de la barre basse (btn_*2) ; photo2 sélectionné dans le XML.
+    @State private var selected2: CiteDetailPage = .photo
+    @State private var rightOffset: CGFloat = 98.0 / 3
+    @State private var bottomOffset: CGFloat = 102.0 / 3
     @State private var showPayment = false
 
+    private var info: CiteDetailInfo { CiteDetailInfo(cite: cite) }
+
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: DS.Space.md) {
-                CiteGallery(images: cite.gallery)
-                CiteHeader(cite: cite)
-                    .padding(.horizontal, DS.Space.md)
+        ZStack {
+            DS.white.ignoresSafeArea()
 
-                Picker("Section", selection: $tab) {
-                    ForEach(Tab.allCases) { Text($0.rawValue).tag($0) }
+            Group {
+                switch page {
+                case .detail: CiteDetailInfoView(info: info)
+                case .comment: CiteCommentView()
+                default: CitePhotoView(info: info)
                 }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, DS.Space.md)
-
-                Group {
-                    switch tab {
-                    case .info: CiteInfoTab(cite: cite)
-                    case .rooms: CiteRoomsTab(cite: cite)
-                    case .reviews: CiteReviewsTab()
-                    case .stats: CiteStatsTab()
-                    }
-                }
-                .padding(.horizontal, DS.Space.md)
-                .animation(.easeInOut, value: tab)
             }
-            .padding(.bottom, DS.Space.lg)
+
+            CiteDetailRightBar(onTap: tapRight)
+                .padding(.bottom, 35)
+                .offset(x: rightOffset)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+
+            CiteDetailBottomBar(selected: selected2, onTap: tapBottom)
+                .padding(.bottom, 5)
+                .offset(y: bottomOffset)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         }
-        .navigationTitle(cite.name)
+        .toolbar(.hidden, for: .tabBar)
+        .toolbarBackground(.hidden, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button { favorites.toggle(cite) } label: {
-                    Image(systemName: favorites.contains(cite) ? "heart.fill" : "heart")
-                        .foregroundStyle(DS.favorite)
-                }
-                .accessibilityLabel("Favori")
-            }
-        }
-        .safeAreaInset(edge: .bottom) {
-            Button { showPayment = true } label: {
-                Text("Réserver - \(cite.pricePerMonth.formatted()) FCFA / mois")
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity)
-                    .padding(DS.Space.md)
-                    .background(DS.ink, in: RoundedRectangle(cornerRadius: DS.Radius.md))
-                    .foregroundStyle(DS.onDark)
-            }
-            .padding(.horizontal, DS.Space.md)
-            .padding(.top, DS.Space.sm)
-            .background(.bar)
-        }
+        .onAppear { showRightBar() }
         .sheet(isPresented: $showPayment) {
-            PaymentSheet(cite: cite)
-                .presentationDetents([.medium, .large])
+            PaymentView()
+                .presentationDetents([.large])
         }
+    }
+
+    // MARK: - Clics (ontlis de FrameLayoutActivity)
+
+    private func tapRight(_ item: CiteDetailPage) {
+        selected2 = item
+        guard item != .photo else { return } // btn_photo : typeTransac "f1", pas de remplacement
+        open(item)
+        withAnimation(.easeInOut(duration: 0.8)) { rightOffset = 98.0 / 3 }
+        withAnimation(.easeInOut(duration: 0.8).delay(0.4)) { bottomOffset = 0 }
+    }
+
+    private func tapBottom(_ item: CiteDetailPage) {
+        selected2 = item
+        open(item)
+        if item == .photo {
+            showRightBar()
+            withAnimation(.easeInOut(duration: 0.8)) { bottomOffset = 102.0 / 3 }
+        }
+    }
+
+    private func open(_ item: CiteDetailPage) {
+        switch item {
+        case .payment: showPayment = true
+        case .localisation: dismiss()
+        default: page = item
+        }
+    }
+
+    private func showRightBar() {
+        withAnimation(.easeInOut(duration: 0.8).delay(0.4)) { rightOffset = -2.0 / 3 }
     }
 }
