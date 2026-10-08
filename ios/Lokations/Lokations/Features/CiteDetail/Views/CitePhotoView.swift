@@ -8,11 +8,11 @@ import SwiftUI
 struct CitePhotoView: View {
     let info: CiteDetailInfo
 
-    @State private var catY: CGFloat = -74.0 / 3
-    @State private var emplX: CGFloat = -355.0 / 3
-    @State private var itemX: CGFloat = -225.0 / 3
-    @State private var prixX: CGFloat = -245.0 / 3
-    @State private var labelY: CGFloat = 85.0 / 3
+    @State private var catY: CGFloat = 0
+    @State private var emplX: CGFloat = 0
+    @State private var itemX: CGFloat = 0
+    @State private var prixX: CGFloat = 0
+    @State private var labelY: CGFloat = 0
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -34,7 +34,6 @@ struct CitePhotoView: View {
                 .padding(.bottom, 5)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
         }
-        .onAppear(perform: animateIn)
     }
 
     // MARK: top_detail

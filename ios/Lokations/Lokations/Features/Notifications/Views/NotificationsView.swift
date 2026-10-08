@@ -5,7 +5,7 @@ import SwiftUI
 /// (marges 40, 40 puis 45) qui apparaît en fondu sur 2 s (anim `fade_in_bottom_nav`).
 /// Données : `MockData.notifications` ; "Consulter" ouvre la cité concernée.
 struct NotificationsView: View {
-    @State private var containerAlpha: Double = 0
+    @State private var containerAlpha: Double = 1
     private let notifications = MockData.notifications
 
     var body: some View {
@@ -31,8 +31,8 @@ struct NotificationsView: View {
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Cite.self) { CiteDetailView(cite: $0) }
             .onAppear {
-                containerAlpha = 0
-                withAnimation(.easeInOut(duration: 2)) { containerAlpha = 1 }
+                containerAlpha = 1
+                
             }
         }
     }

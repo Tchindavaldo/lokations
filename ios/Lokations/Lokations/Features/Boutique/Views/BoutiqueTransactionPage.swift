@@ -3,8 +3,8 @@ import SwiftUI
 // Reproduit : res/layout/fragment_boutique_historique_transcastion.xml
 // (fragment_boutique_historique_transcastion.kt : fondu 2000 ms apres 300 ms puis 650 ms).
 struct BoutiqueTransactionPage: View {
-    @State private var firstOpacity = 0.0
-    @State private var secondOpacity = 0.0
+    @State private var firstOpacity = 1.0
+    @State private var secondOpacity = 1.0
 
     private static let green = DS.android(0xCC03FF25, hasAlpha: true)
     private static let red = DS.android(0xCCFF0303, hasAlpha: true)
@@ -44,13 +44,13 @@ struct BoutiqueTransactionPage: View {
         .background(DS.white)
         .onAppear(perform: animate)
         .onDisappear {
-            firstOpacity = 0
-            secondOpacity = 0
+            firstOpacity = 1
+            secondOpacity = 1
         }
     }
 
     private func animate() {
-        withAnimation(.easeInOut(duration: 2).delay(0.3)) { firstOpacity = 1 }
-        withAnimation(.easeOut(duration: 2).delay(0.65)) { secondOpacity = 1 }
+        
+        
     }
 }

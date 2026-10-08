@@ -55,16 +55,12 @@ struct CiteDetailView: View {
     @Environment(\.openURL) private var openURL
     @EnvironmentObject private var favorites: FavoritesStore
     @State private var page: CiteDetailPage = .photo
-    /// Fond sélectionné de la barre basse (btn_*2) ; photo2 sélectionné dans le XML.
-    @State private var selected2: CiteDetailPage = .photo
-    @State private var rightOffset: CGFloat = 98.0 / 3
-    @State private var bottomOffset: CGFloat = 102.0 / 3
     @State private var showPayment = false
 
     private var info: CiteDetailInfo { CiteDetailInfo(cite: cite) }
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             DS.white.ignoresSafeArea()
 
             Group {
@@ -74,19 +70,14 @@ struct CiteDetailView: View {
                 default: CitePhotoView(info: info)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            CiteDetailRightBar(onTap: tapRight)
-                .padding(.bottom, 35)
-                .offset(x: rightOffset)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-
-            CiteDetailBottomBar(selected: selected2, onTap: tapBottom)
-                .padding(.bottom, 5)
-                .offset(y: bottomOffset)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            // Barre unique dédiée au détail (frame_layout.xml : menu détail), toujours visible.
+            CiteDetailBottomBar(selected: page, onTap: tap)
+                .padding(.bottom, 8)
         }
+        .transaction { $0.animation = nil }
         .toolbar(.hidden, for: .tabBar)
-        .toolbarBackground(.hidden, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -97,45 +88,19 @@ struct CiteDetailView: View {
                 .accessibilityLabel("Favori")
             }
         }
-        .onAppear { showRightBar() }
         .sheet(isPresented: $showPayment) {
             PaymentView(cite: cite)
                 .presentationDetents([.large])
         }
     }
 
-    // MARK: - Clics (ontlis de FrameLayoutActivity)
-
-    private func tapRight(_ item: CiteDetailPage) {
-        // Paiement (feuille) et localisation (Plans) n'altèrent pas l'écran courant.
-        if item == .payment || item == .localisation { open(item); return }
-        selected2 = item
-        guard item != .photo else { return } // btn_photo : typeTransac "f1", pas de remplacement
-        open(item)
-        withAnimation(.easeInOut(duration: 0.8)) { rightOffset = 98.0 / 3 }
-        withAnimation(.easeInOut(duration: 0.8).delay(0.4)) { bottomOffset = 0 }
-    }
-
-    private func tapBottom(_ item: CiteDetailPage) {
-        // Paiement (feuille) et localisation (Plans) n'altèrent pas l'écran courant.
-        if item == .payment || item == .localisation { open(item); return }
-        selected2 = item
-        open(item)
-        if item == .photo {
-            showRightBar()
-            withAnimation(.easeInOut(duration: 0.8)) { bottomOffset = 102.0 / 3 }
-        }
-    }
-
-    private func open(_ item: CiteDetailPage) {
+    /// Infos / photos / avis changent la page sur place ; paiement ouvre la feuille ;
+    /// localisation ouvre Plans. Aucun retour vers l'accueil.
+    private func tap(_ item: CiteDetailPage) {
         switch item {
         case .payment: showPayment = true
         case .localisation: if let url = info.mapsURL { openURL(url) }
         default: page = item
         }
-    }
-
-    private func showRightBar() {
-        withAnimation(.easeInOut(duration: 0.8).delay(0.4)) { rightOffset = -2.0 / 3 }
     }
 }

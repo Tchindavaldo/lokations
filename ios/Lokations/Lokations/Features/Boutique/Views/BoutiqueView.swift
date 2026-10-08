@@ -5,7 +5,7 @@ import SwiftUI
 // Transaction, Statistique, Boutique, Publicite. Fondu de l'en-tete 2000 ms (onResume).
 struct BoutiqueView: View {
     @State private var page = 0
-    @State private var headerOpacity = 0.0
+    @State private var headerOpacity = 1.0
 
     private let titles = ["Transaction", "Statistique", "Boutique", "Publicité"]
 
@@ -34,8 +34,8 @@ struct BoutiqueView: View {
             .toolbar(.hidden, for: .navigationBar)
             .modifier(BoutiqueToastModifier())
             .onAppear {
-                headerOpacity = 0
-                withAnimation(.easeInOut(duration: 2)) { headerOpacity = 1 }
+                headerOpacity = 1
+                
             }
         }
     }

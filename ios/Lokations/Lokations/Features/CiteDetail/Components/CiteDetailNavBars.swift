@@ -43,27 +43,6 @@ struct CiteDetailNavBackground: ViewModifier {
     }
 }
 
-/// container_item_nav : 49dp de large, padding 10/20, items espacés de 15dp.
-/// Ordre XML : infos, photo (toujours sélectionné), paiement, commentaire, localisation.
-struct CiteDetailRightBar: View {
-    let onTap: (CiteDetailPage) -> Void
-
-    var body: some View {
-        VStack(spacing: 15) {
-            CiteDetailNavItem(icon: "pps", selected: false) { onTap(.detail) }
-            CiteDetailNavItem(icon: "photo", selected: true) { onTap(.photo) }
-            CiteDetailNavItem(icon: "prix", selected: false) { onTap(.payment) }
-            CiteDetailNavItem(icon: "comment", selected: false) { onTap(.comment) }
-            CiteDetailNavItem(icon: "plce", selected: false) { onTap(.localisation) }
-        }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 20)
-        .frame(width: 49)
-        .modifier(CiteDetailNavBackground())
-        .shadow(color: DS.blackA(20), radius: 2.5, y: 1) // elevation 5dp
-    }
-}
-
 /// container_item_nav2 : hauteur 49dp, padding 20/10, items espacés de 15dp.
 struct CiteDetailBottomBar: View {
     let selected: CiteDetailPage

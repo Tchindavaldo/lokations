@@ -65,7 +65,6 @@ struct HomeFadeIn: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .opacity(shown ? 1 : 0)
-            .onAppear { withAnimation(.easeIn(duration: duration)) { shown = true } }
+
     }
 }

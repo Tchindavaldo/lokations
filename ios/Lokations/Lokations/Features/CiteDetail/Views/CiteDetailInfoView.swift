@@ -12,7 +12,7 @@ struct CiteDetailInfoView: View {
     let info: CiteDetailInfo
     let onReserve: () -> Void
     @Environment(\.openURL) private var openURL
-    @State private var alpha: Double = 0
+    @State private var alpha: Double = 1
     @State private var tab = 0
 
     var body: some View {
@@ -37,7 +37,7 @@ struct CiteDetailInfoView: View {
         .padding(.bottom, 56)
         .background(DS.white)
         .opacity(alpha)
-        .onAppear { withAnimation(.linear(duration: 1)) { alpha = 1 } }
+        
     }
 
     // MARK: top_nav_detail (chaîne « spread »)

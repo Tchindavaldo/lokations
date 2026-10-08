@@ -6,7 +6,7 @@ import SwiftUI
 /// Chaque ligne ouvre une fiche ; "Deconnexion" / "Changer De Compte" demandent confirmation.
 struct SettingsView: View {
     @EnvironmentObject private var session: SessionStore
-    @State private var itemsAlpha: Double = 0
+    @State private var itemsAlpha: Double = 1
     @State private var detail: SettingsDetail?
     @State private var confirmSignOut = false
 
@@ -62,8 +62,8 @@ struct SettingsView: View {
             Text(session.errorMessage ?? "")
         }
         .onAppear {
-            itemsAlpha = 0
-            withAnimation(.easeInOut(duration: 2)) { itemsAlpha = 1 }
+            itemsAlpha = 1
+            
         }
     }
 }
