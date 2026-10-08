@@ -38,8 +38,8 @@ ios/
         Auth/                    SplashView, AuthFlowView, AuthLoginView, AuthRegisterView, AuthInputField, AuthCommon, AuthWeightedColumn
         Home/                    HomeView, HomeCiteListView, HomeComponents (carrousel, sections, cartes)
         Search/                  SearchView, SearchToolbar, SearchTabStrip, SearchSectionBlock, SearchCiteCards
-        CiteDetail/              CiteDetailView, galerie, infos, chambres, avis, stats
-        Payment/                 PaymentSheet
+        CiteDetail/              CiteDetailView (frame_layout + barres), CitePhotoView, CiteDetailInfoView, CiteCommentView, CiteChambreInfo*, CiteStatistique*
+        Payment/                 PaymentView (+ PaymentComponents), présenté en .sheet
         Boutique/                BoutiqueView + pages Transaction, Statistique, Shop, Pub, BoutiqueProductFormView
         Notifications/           NotificationsView, NotifRow
         Settings/                SettingsView, SettingsRow
@@ -54,8 +54,10 @@ ios/
 | HomeActivity + BottomNavigationView | `MainTabView` |
 | HomeFragment + fragment_ligne1..7 | `HomeView` |
 | fragment_search | `SearchView` |
-| FrameLayoutActivity + fragments photo/info/comment/stat | `CiteDetailView` |
-| fragment_payement | `PaymentSheet` |
+| FrameLayoutActivity + fragment_photo/detail/comment | `CiteDetailView`, `CitePhotoView`, `CiteDetailInfoView`, `CiteCommentView` |
+| fragment_chambre_info1..4 / inflate_chambre_infos | `CiteChambreInfoPager`, `CiteChambreInfoRow`, `CiteChambreInfo2View`, `CiteChambreInfo4View` |
+| fragment_statistique_* / inflate_statistique_chambre | `CiteStatistiquePeriodeView`, `CiteStatistiqueChambreList`, `CiteStatistiqueChambreRow` |
+| fragment_payement | `PaymentView` |
 | fragment_boutique (+ historique / statistique / boutique / pub) | `BoutiqueView` |
 | activity_ajout_produit / activity_update_produit | `BoutiqueProductFormView` (.sheet) |
 | fragment_notif | `NotificationsView` |
