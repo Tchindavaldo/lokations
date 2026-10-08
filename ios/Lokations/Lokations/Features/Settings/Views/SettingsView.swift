@@ -3,15 +3,17 @@ import SwiftUI
 /// Reproduit `res/layout/fragment_param.xml` (fragment_param.kt) : fond #FFFFFF,
 /// en-tête 50 "Parametre Et Confidentialité" (14 gras centré), puis 12 lignes ;
 /// item1 à item10 apparaissent en fondu sur 2 s (anim `fade_in_bottom_nav`).
-/// "Deconnexion" est relié à `SessionStore.signOut()`.
+/// Chaque ligne ouvre une fiche ; "Deconnexion" / "Changer De Compte" demandent confirmation.
 struct SettingsView: View {
     @EnvironmentObject private var session: SessionStore
     @State private var itemsAlpha: Double = 0
+    @State private var detail: SettingsDetail?
+    @State private var confirmSignOut = false
 
     /// (icône, teinte Android, libellé, marge haute) dans l'ordre du XML.
     private let items: [SettingsItemData] = [
-        .init(icon: "ic_baseline_person_outline_24", tint: DS.white, title: "Compte", marginTop: 10),
-        .init(icon: "ic_baseline_lock_24", tint: DS.white, title: "Securité", marginTop: 0),
+        .init(icon: "ic_baseline_person_outline_24", tint: DS.black, title: "Compte", marginTop: 10),
+        .init(icon: "ic_baseline_lock_24", tint: DS.black, title: "Securité", marginTop: 0),
         .init(icon: "ic_baseline_shield_24", tint: DS.black, title: "Confidentialité", marginTop: 10),
         .init(icon: "notif", tint: DS.android(0x25121F), title: "Notification", marginTop: 10),
         .init(icon: "ic_baseline_shopping_bag_24", tint: DS.black, title: "Langue", marginTop: 10),
@@ -38,13 +40,27 @@ struct SettingsView: View {
                         .opacity(index < 10 ? itemsAlpha : 1) // item1…item10 seulement
                         .contentShape(Rectangle())
                         .onTapGesture {
-                            if item.title == "Deconnexion" { session.signOut() }
+                            switch item.title {
+                            case "Deconnexion", "Changer De Compte": confirmSignOut = true
+                            default: detail = SettingsDetail(title: item.title)
+                            }
                         }
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(DS.white)
+        .sheet(item: $detail) { SettingsDetailSheet(detail: $0).environmentObject(session) }
+        .confirmationDialog("Se déconnecter ?", isPresented: $confirmSignOut, titleVisibility: .visible) {
+            Button("Se déconnecter", role: .destructive) { session.signOut() }
+            Button("Annuler", role: .cancel) {}
+        }
+        .alert("Erreur", isPresented: Binding(get: { session.errorMessage != nil },
+                                              set: { if !$0 { session.errorMessage = nil } })) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(session.errorMessage ?? "")
+        }
         .onAppear {
             itemsAlpha = 0
             withAnimation(.easeInOut(duration: 2)) { itemsAlpha = 1 }

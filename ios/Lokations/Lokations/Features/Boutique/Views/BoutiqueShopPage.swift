@@ -2,10 +2,14 @@ import SwiftUI
 
 // Reproduit : res/layout/fragmentbtiqueboutique.xml (Fragment_boutique_boutique.kt) :
 // filtres de statut, 4 cartes 120x80 (ajouter / modifier / supprimer), puis RecyclerView
-// de inflate_chambre_infos alimente par Firestore users/user.listOfUsers via BoutiqueStore.
+// de inflate_chambre_infos (CiteChambreInfoRow, CiteDetail) alimente par Firestore users/user.listOfUsers via BoutiqueStore.
 struct BoutiqueShopPage: View {
     @EnvironmentObject private var store: BoutiqueStore
     @State private var form: BoutiqueProductFormView.Mode?
+    @State private var deleteMode = false
+    @State private var filter = 0
+
+    private let filters = ["Chambre libre", " Occupé", "impayé", "payement complet", "En Fin De contrat"]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -16,10 +20,15 @@ struct BoutiqueShopPage: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     BoutiqueShopActionCard(top: "Ajouter", bottom: "Un Nouvel Article") { form = .add }
-                    BoutiqueShopActionCard(top: "modifier", bottom: "Un Aricle Existant") { form = .update }
-                    BoutiqueShopActionCard(top: "suprimer", bottom: "Un Aricle Existant")
+                    BoutiqueShopActionCard(top: "modifier", bottom: "Un Aricle Existant") {
+                        deleteMode = false
+                        hint("Touchez un article pour le modifier")
+                    }
                     BoutiqueShopActionCard(top: "suprimer", bottom: "Un Aricle Existant",
-                                           topColor: DS.whiteA(50), bottomColor: DS.white)
+                                           topColor: deleteMode ? DS.black : DS.blackA(50)) {
+                        deleteMode.toggle()
+                        hint(deleteMode ? "Touchez un article pour le supprimer" : "Suppression annulée")
+                    }
                 }
                 .padding(.leading, 8)
                 .padding(.top, 15)
@@ -27,13 +36,15 @@ struct BoutiqueShopPage: View {
 
             List {
                 ForEach(store.products) { product in
-                    BoutiqueChambreInfoRow(title: product.item)
+                    CiteChambreInfoRow(item: product.item)
+                        .contentShape(Rectangle())
+                        .onTapGesture { tap(product) }
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
                         .listRowBackground(DS.white)
                         .swipeActions {
                             Button(role: .destructive) {
-                                Task { await store.delete(product) }
+                                Task { _ = await store.delete(product) }
                             } label: {
                                 Text("supprimer")
                             }
@@ -58,18 +69,28 @@ struct BoutiqueShopPage: View {
     private var statusFilters: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                Text("Chambre libre")
-                    .font(.system(size: 12, weight: .bold))
-                    .foregroundStyle(DS.black)
-                filter(" Occupé")
-                filter("impayé")
-                filter("payement complet")
-                filter("En Fin De contrat").frame(width: 100, alignment: .leading)
+                ForEach(filters.indices, id: \.self) { index in
+                    Text(filters[index])
+                        .font(.system(size: 12, weight: filter == index ? .bold : .regular))
+                        .foregroundStyle(filter == index ? DS.black : DS.blackA(50))
+                        .frame(width: index == 4 ? 100 : nil, alignment: .leading)
+                        .onTapGesture { filter = index }
+                }
             }
         }
     }
 
-    private func filter(_ text: String) -> some View {
-        Text(text).font(.system(size: 12)).foregroundStyle(DS.blackA(50))
+    /// Touche d'un article : modification (par defaut) ou suppression (carte "suprimer" active).
+    private func tap(_ product: Product) {
+        if deleteMode {
+            deleteMode = false
+            Task { _ = await store.delete(product) }
+        } else {
+            form = .edit(product)
+        }
+    }
+
+    private func hint(_ text: String) {
+        store.feedback = BoutiqueStore.Feedback(message: text, isError: false)
     }
 }

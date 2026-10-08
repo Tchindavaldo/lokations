@@ -42,7 +42,7 @@ ios/
         Payment/                 PaymentView (+ PaymentComponents), présenté en .sheet
         Boutique/                BoutiqueView + pages Transaction, Statistique, Shop, Pub, BoutiqueProductFormView
         Notifications/           NotificationsView, NotifRow
-        Settings/                SettingsView, SettingsRow
+        Settings/                SettingsView, SettingsRow, SettingsDetailSheet
 ```
 
 ## Correspondance Android -> iOS

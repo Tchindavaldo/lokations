@@ -35,9 +35,9 @@ struct CiteDetailInfo {
     init(cite: Cite) {
         self.cite = cite
         categorie = cite.name
-        itemCategorie = "chambre 1"
+        itemCategorie = "\(cite.totalRooms) chambres"
         lieux = "\(cite.city), \(cite.district)"
-        prix = "\(Self.grouped(cite.pricePerMonth * 12)) /Ans"
+        prix = "\(Self.grouped(cite.pricePerMonth)) /mois"
     }
 
     static func grouped(_ value: Int) -> String {

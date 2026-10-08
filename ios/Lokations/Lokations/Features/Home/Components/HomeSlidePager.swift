@@ -5,15 +5,14 @@ import SwiftUI
 
 struct HomeSlide: Identifiable {
     let id = UUID()
-    let image: String
-    let titre: String
-    let description: String
+    let cite: Cite
+    var image: String { cite.imageName }
+    var titre: String { cite.name }
+    var description: String {
+        "\(cite.releasingRooms) chambre en cours de libération, \(cite.freeRooms) chambre disponible"
+    }
 
-    /// itemList de HomeFragment .kt
-    static let all = [
-        HomeSlide(image: "m7", titre: "cité Rose",
-                  description: "3 chambre en cour de l'iberartion, 3 chambre disponible"),
-    ]
+    static func from(_ cites: [Cite]) -> [HomeSlide] { cites.map { HomeSlide(cite: $0) } }
 }
 
 struct HomeSlidePager: View {
@@ -27,7 +26,10 @@ struct HomeSlidePager: View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 0) {
                 ForEach(0..<(slides.count * Self.copies), id: \.self) { i in
-                    HomeSlidePage(slide: slides[i % slides.count])
+                    NavigationLink(value: slides[i % slides.count].cite) {
+                        HomeSlidePage(slide: slides[i % slides.count])
+                    }
+                    .buttonStyle(.plain)
                         .containerRelativeFrame(.horizontal)
                         .scrollTransition(axis: .horizontal) { content, phase in
                             content

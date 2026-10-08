@@ -1,7 +1,7 @@
 import SwiftUI
 
 // Reproduit res/layout/fragment_photo.xml (fragment_photo.kt) : pager plein écran
-// login_img1..6, bloc haut (categorie + emplacement), bloc bas (Itemcategorie, prix,
+// (galerie de la cité au lieu des login_img1..6 de test), bloc haut (categorie + emplacement), bloc bas (Itemcategorie, prix,
 // label_Itemcategorie) et pastille de l'indicateur. Les translations d'entrée (px)
 // et leurs délais (onResume) sont reproduits ; px convertis pour un écran @3x.
 
@@ -14,12 +14,9 @@ struct CitePhotoView: View {
     @State private var prixX: CGFloat = -245.0 / 3
     @State private var labelY: CGFloat = 85.0 / 3
 
-    private let images = ["login_img1", "login_img2", "login_img3",
-                          "login_img4", "login_img5", "login_img6"]
-
     var body: some View {
         ZStack(alignment: .topLeading) {
-            CitePhotoPager(images: images)
+            CitePhotoPager(images: info.gallery)
                 .ignoresSafeArea()
 
             topDetail
@@ -91,7 +88,7 @@ struct CitePhotoView: View {
                 .padding(.trailing, 12)
                 .padding(.top, 4)
                 .padding(.bottom, 5)
-                .frame(width: 110, alignment: .leading)
+                .frame(minWidth: 110, alignment: .leading)
                 .background(DS.black, in: RoundedRectangle(cornerRadius: 15))
                 .padding(.leading, 5)
                 .padding(.bottom, 4)
@@ -101,17 +98,16 @@ struct CitePhotoView: View {
                 .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(DS.whiteA(50))
                 .lineLimit(1)
-                .minimumScaleFactor(0.8)
                 .padding(.leading, 12)
                 .padding(.trailing, 16)
                 .padding(.vertical, 3)
-                .frame(width: 120, alignment: .leading)
+                .frame(minWidth: 120, alignment: .leading)
                 .background(DS.black, in: RoundedRectangle(cornerRadius: 15))
                 .padding(.leading, 5)
                 .padding(.bottom, 4)
                 .offset(x: prixX)
 
-            Text("Atuellement Disponible")
+            Text(info.cite.freeRooms > 0 ? "Actuellement Disponible" : "Complet")
                 .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(DS.whiteA(50))
                 .padding(.horizontal, 12)

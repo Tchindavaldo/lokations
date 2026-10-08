@@ -5,11 +5,12 @@ import SwiftUI
 // alignée en bas (round_black_10_10, 14sp bold black_70, padding 10/8).
 
 struct CiteDetailHeader: View {
+    let info: CiteDetailInfo
     let chip: String
 
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
-            Image("m6")
+            Image(info.cite.imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 55, height: 55)
@@ -17,14 +18,14 @@ struct CiteDetailHeader: View {
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("Cité Hypocrate")
+                Text(info.categorie)
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(DS.black)
                 Spacer(minLength: 0)
-                Text("Baganté")
+                Text(info.adresse)
                     .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
-                Text("Chambre10,  260 000/Ans")
+                Text("\(info.cite.freeRooms) chambres libres,  \(info.prix)")
                     .font(.system(size: 12))
                     .foregroundStyle(DS.blackA(50))
                     .padding(.bottom, 5)
