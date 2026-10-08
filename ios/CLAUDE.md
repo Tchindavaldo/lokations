@@ -3,7 +3,7 @@
 Ce fichier est **versionné** : ses règles s'appliquent à toute session Claude Code
 qui travaille dans `ios/`. Adapté des consignes du projet yaammoo.
 
-> **12 règles numérotées R1 → R12.** Toute nouvelle règle reçoit le numéro suivant
+> **13 règles numérotées R1 → R13.** Toute nouvelle règle reçoit le numéro suivant
 > et le total ci-dessus est mis à jour.
 
 ## R1 — Style de réponse (OBLIGATOIRE)
@@ -61,8 +61,9 @@ Sans lui, l'app tourne en mode démo. Constantes Firestore : `AppConfig`.
 
 ## R9 — Emojis : statut seulement (OBLIGATOIRE)
 
-Aucun emoji décoratif (code, commentaires, doc, logs, commits). Icônes UI via
-SF Symbols uniquement. Autorisés : `⚠️` `✅` `❌` `✕`.
+Aucun emoji décoratif (code, commentaires, doc, logs, commits). Icônes UI : celles
+d'Android importées dans `Assets.xcassets` (même nom que le drawable), SF Symbols
+seulement si Android n'en a pas. Autorisés : `⚠️` `✅` `❌` `✕`.
 
 ## R10 — Jamais de composant partagé entre écrans (OBLIGATOIRE)
 
@@ -79,8 +80,18 @@ et le dire en 1 phrase.
 
 ## R12 — Couleurs & dimensions : design system `DS` uniquement (OBLIGATOIRE)
 
-Toute couleur, rayon et espacement passe par `DS` (`Core/Theme/DS.swift`) :
-jamais de `Color(red:…)`, hex ou valeur magique de padding/radius dans une vue.
-Composants système dédiés en priorité : `NavigationStack`, `TabView`, `List`,
-`Form`, `.searchable`, `.sheet` + `presentationDetents`, `.swipeActions`,
-`.refreshable`, `Swift Charts`, `LabeledContent`.
+Toute couleur passe par `DS` (`Core/Theme/DS.swift`) : jamais de `Color(red:…)` ni
+hex dans une vue (`DS.android(0x…)` reprend une couleur littérale d'un layout XML).
+Les dimensions recopiées d'un layout Android (dp -> pt, sp -> pt) sont permises
+dans la vue qui reproduit ce layout.
+Composants système (`NavigationStack`, `.sheet`, `ScrollView`, `TabView(.page)`,
+`Swift Charts`…) seulement s'ils rendent exactement le layout Android (R13).
+
+## R13 — Fidélité au design Android (OBLIGATOIRE)
+
+L'app iOS est une **copie exacte** du design Android (`app/src/main/res/layout`,
+`drawable`, `values`). Chaque écran reproduit son layout XML : mêmes images, icônes,
+couleurs, textes, tailles (1 dp = 1 pt, 1 sp = 1 pt), marges, rayons, ordre des
+éléments. Rien d'inventé : pas de composant système qui change l'apparence
+(pas de `List`/`Form`/`TabView` stylés iOS si le XML dessine autre chose).
+Chaque vue indique en en-tête le layout XML qu'elle reproduit.
