@@ -28,7 +28,7 @@ struct HomeFeed: View {
             }
             .padding(.bottom, 50)
         }
-        .background(DS.android(0xF9F2FC))
+        .background(DS.white)
     }
 }
 

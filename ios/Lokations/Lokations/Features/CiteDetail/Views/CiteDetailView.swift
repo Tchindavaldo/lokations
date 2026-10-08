@@ -52,10 +52,8 @@ struct CiteDetailInfo {
 struct CiteDetailView: View {
     let cite: Cite
 
-    @Environment(\.openURL) private var openURL
     @EnvironmentObject private var favorites: FavoritesStore
     @State private var page: CiteDetailPage = .photo
-    @State private var showPayment = false
 
     private var info: CiteDetailInfo { CiteDetailInfo(cite: cite) }
 
@@ -65,9 +63,11 @@ struct CiteDetailView: View {
 
             Group {
                 switch page {
-                case .detail: CiteDetailInfoView(info: info) { showPayment = true }
+                case .detail: CiteDetailInfoView(info: info) { page = .payment }
                 case .comment: CiteCommentView(info: info)
-                default: CitePhotoView(info: info)
+                case .payment: PaymentView(cite: cite).padding(.bottom, 64)
+                case .localisation: CiteMapView(info: info)
+                case .photo: CitePhotoView(info: info)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -88,19 +88,10 @@ struct CiteDetailView: View {
                 .accessibilityLabel("Favori")
             }
         }
-        .sheet(isPresented: $showPayment) {
-            PaymentView(cite: cite)
-                .presentationDetents([.large])
-        }
     }
 
-    /// Infos / photos / avis changent la page sur place ; paiement ouvre la feuille ;
-    /// localisation ouvre Plans. Aucun retour vers l'accueil.
+    /// Chaque bouton de la barre remplace toute la page sur place (aucun retour vers l'accueil).
     private func tap(_ item: CiteDetailPage) {
-        switch item {
-        case .payment: showPayment = true
-        case .localisation: if let url = info.mapsURL { openURL(url) }
-        default: page = item
-        }
+        page = item
     }
 }

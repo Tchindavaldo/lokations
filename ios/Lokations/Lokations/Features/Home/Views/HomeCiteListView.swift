@@ -20,7 +20,7 @@ struct HomeCiteListView: View {
             }
             .padding(14)
         }
-        .background(DS.android(0xF9F2FC))
+        .background(DS.white)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
     }

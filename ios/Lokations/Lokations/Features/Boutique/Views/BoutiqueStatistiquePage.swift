@@ -22,7 +22,7 @@ struct BoutiqueStatistiquePage: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .padding(.top, 15)
         }
-        .background(DS.android(0xF9F2FC))
+        .background(DS.white)
     }
 }
 

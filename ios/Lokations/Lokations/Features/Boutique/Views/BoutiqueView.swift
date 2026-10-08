@@ -21,13 +21,17 @@ struct BoutiqueView: View {
                     )
                     .opacity(headerOpacity)
 
-                    TabView(selection: $page) {
-                        BoutiqueTransactionPage().tag(0)
-                        BoutiqueStatistiquePage().tag(1)
-                        BoutiqueShopPage().tag(2)
-                        BoutiquePubPage().tag(3)
+                    // Changement d'onglet net, sans glissement de page.
+                    Group {
+                        switch page {
+                        case 0: BoutiqueTransactionPage()
+                        case 1: BoutiqueStatistiquePage()
+                        case 2: BoutiqueShopPage()
+                        default: BoutiquePubPage()
+                        }
                     }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transaction { $0.animation = nil }
                 }
             }
             .background(DS.white)

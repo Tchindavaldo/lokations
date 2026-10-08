@@ -23,7 +23,7 @@ struct HomeFavoritesView: View {
                 }
                 .padding(14)
             }
-            .background(DS.android(0xF9F2FC))
+            .background(DS.white)
             .navigationTitle("favoris")
             .navigationDestination(for: Cite.self) { CiteDetailView(cite: $0) }
         }

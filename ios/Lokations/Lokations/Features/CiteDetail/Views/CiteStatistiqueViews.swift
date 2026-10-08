@@ -49,7 +49,7 @@ struct CiteStatistiquePeriodeView: View {
                 }
             }
             .frame(height: 20)
-            .background(DS.android(0xF9F2FC))
+            .background(DS.white)
 
             TabView(selection: $selected) {
                 ForEach(periode.titles.indices, id: \.self) { i in
@@ -59,7 +59,7 @@ struct CiteStatistiquePeriodeView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .padding(.top, 5)
         }
-        .background(DS.android(0xF9F2FC))
+        .background(DS.white)
     }
 }
 

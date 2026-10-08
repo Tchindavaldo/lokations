@@ -16,12 +16,7 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            GeometryReader { geo in
-                let band = max(40, geo.safeAreaInsets.top + 2)
-                ZStack(alignment: .top) {
-                    DS.white
-                    DS.blackA(20).frame(height: band)
-                    VStack(spacing: 0) {
+            VStack(spacing: 0) {
                         HomeToolbar(
                             onSearch: search,
                             onCart: { openTab(.store) },
@@ -29,12 +24,9 @@ struct HomeView: View {
                             onAccount: { openTab(.profil) })
                         HomeCategoryNav().padding(.top, 5)
                         ScrollView { HomeFeed() }
-                            .padding(.top, 25)
-                    }
-                    .padding(.top, band - 2)
-                }
-                .ignoresSafeArea(edges: .top)
+                            .padding(.top, 12)
             }
+            .background(DS.white)
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Cite.self) { CiteDetailView(cite: $0) }
             .navigationDestination(for: HomeRoute.self) { route in

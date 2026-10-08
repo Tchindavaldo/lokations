@@ -50,7 +50,7 @@ struct SearchView: View {
                     }
                 }
                 .scrollDismissesKeyboard(.immediately)
-                .background(DS.android(0xF9F2FC))
+                .background(DS.white)
                 .padding(.top, 10)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
