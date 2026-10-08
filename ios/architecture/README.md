@@ -40,7 +40,7 @@ ios/
         Search/                  SearchView, SearchToolbar, SearchTabStrip, SearchSectionBlock, SearchCiteCards
         CiteDetail/              CiteDetailView, galerie, infos, chambres, avis, stats
         Payment/                 PaymentSheet
-        Boutique/                BoutiqueView, BoutiqueProductsList, ProductEditorSheet, historique, stats
+        Boutique/                BoutiqueView + pages Transaction, Statistique, Shop, Pub, BoutiqueProductFormView
         Notifications/           NotificationsView, NotifRow
         Settings/                SettingsView, SettingsRow
 ```
@@ -56,8 +56,8 @@ ios/
 | fragment_search | `SearchView` |
 | FrameLayoutActivity + fragments photo/info/comment/stat | `CiteDetailView` |
 | fragment_payement | `PaymentSheet` |
-| fragment_boutique (+ historique / statistique) | `BoutiqueView` |
-| activity_ajout_produit / activity_update_produit | `ProductEditorSheet` |
+| fragment_boutique (+ historique / statistique / boutique / pub) | `BoutiqueView` |
+| activity_ajout_produit / activity_update_produit | `BoutiqueProductFormView` (.sheet) |
 | fragment_notif | `NotificationsView` |
 | fragment_param | `SettingsView` |
 
