@@ -97,3 +97,7 @@ rendu reste celui d'Android : `TabView` natif (Liquid Glass sur iOS 26) avec les
 icônes et l'ordre Android, `.glassEffect()` sous `if #available(iOS 26, *)` (repli
 iOS 17 sur le style Android), `NavigationStack`, `.sheet`, gestes, haptique.
 Chaque vue indique en en-tête le layout XML qu'elle reproduit.
+On copie le **design**, pas les **bugs** : texte illisible (blanc sur blanc), boutons
+qui ne font rien, doublons, données de test, choix par numéro tapé, filtres inactifs…
+sont corrigés avec un comportement logique, sans changer l'apparence. Les textes
+trop petits pour iOS sont agrandis (minimum lisible ~12 pt).
