@@ -1,65 +1,39 @@
+// Navigation login.kt <-> activity_register.kt (transition fade_in / fade_out).
+// Écrans : AuthLoginView (activity_login.xml), AuthRegisterView (activity_register.xml).
 import SwiftUI
 
-/// Bascule connexion / inscription (équivalent login.kt + activity_register.kt).
 struct AuthFlowView: View {
-    enum Mode { case login, register }
+    enum Screen { case login, register }
 
     @EnvironmentObject private var session: SessionStore
-    @State private var mode: Mode = .login
-    @State private var email = ""
-    @State private var password = ""
-    @FocusState private var focused: AuthField?
+    @State private var screen: Screen = .login
 
     var body: some View {
-        ZStack {
-            AuthBackground(imageName: mode == .login ? "login_img1" : "login_img2")
-
-            VStack(spacing: DS.Space.md) {
-                Spacer()
-                Text(mode == .login ? "Connexion" : "Inscription")
-                    .font(.largeTitle.bold())
-                    .foregroundStyle(DS.onDark)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                AuthTextField(field: .email, text: $email, focused: $focused)
-                AuthTextField(field: .password, text: $password, focused: $focused)
-
-                if let error = session.errorMessage {
-                    Text(error)
-                        .font(.footnote)
-                        .foregroundStyle(DS.danger)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-
-                AuthPrimaryButton(title: mode == .login ? "Se connecter" : "S'inscrire",
-                                  isLoading: session.isLoading, action: submit)
-
-                Button(action: toggleMode) {
-                    Text(mode == .login ? "Pas de compte ? **S'inscrire**" : "Déjà un compte ? **Se connecter**")
-                        .foregroundStyle(DS.onDark)
-                }
-                .padding(.bottom, DS.Space.lg)
+        ZStack(alignment: .bottom) {
+            switch screen {
+            case .login:
+                AuthLoginView(onRegister: { go(.register) })
+                    .transition(.opacity)
+            case .register:
+                AuthRegisterView(onLogin: { go(.login) })
+                    .transition(.opacity)
             }
-            .padding(.horizontal, DS.Space.lg)
+            if let error = session.errorMessage {
+                AuthToast(message: error)
+                    .transition(.opacity)
+                    .task(id: error) {
+                        try? await Task.sleep(for: .seconds(3.5))
+                        if session.errorMessage == error { session.errorMessage = nil }
+                    }
+            }
         }
-        .onSubmit(of: .text) {
-            if focused == .email { focused = .password } else { submit() }
-        }
+        .animation(.easeInOut(duration: 0.3), value: screen)
+        .animation(.easeInOut(duration: 0.2), value: session.errorMessage)
         .transition(.opacity)
     }
 
-    private func submit() {
-        focused = nil
-        Task {
-            switch mode {
-            case .login: await session.signIn(email: email, password: password)
-            case .register: await session.register(email: email, password: password)
-            }
-        }
-    }
-
-    private func toggleMode() {
+    private func go(_ target: Screen) {
         session.errorMessage = nil
-        withAnimation { mode = mode == .login ? .register : .login }
+        screen = target
     }
 }

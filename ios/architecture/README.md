@@ -35,7 +35,7 @@ ios/
         Services/                AuthService, ProductService (Firebase + démo), MockData
         Stores/                  SessionStore, BoutiqueStore, FavoritesStore
       Features/
-        Auth/                    SplashView, AuthFlowView, AuthComponents
+        Auth/                    SplashView, AuthFlowView, AuthLoginView, AuthRegisterView, AuthInputField, AuthCommon, AuthWeightedColumn
         Home/                    HomeView, HomeCiteListView, HomeComponents (carrousel, sections, cartes)
         Search/                  SearchView, SearchCriterion, SearchComponents
         CiteDetail/              CiteDetailView, galerie, infos, chambres, avis, stats
@@ -50,7 +50,7 @@ ios/
 | Android | iOS |
 |---|---|
 | splash_activity | `SplashView` |
-| login.kt / activity_register.kt | `AuthFlowView` |
+| login.kt / activity_register.kt | `AuthFlowView` -> `AuthLoginView` / `AuthRegisterView` |
 | HomeActivity + BottomNavigationView | `MainTabView` |
 | HomeFragment + fragment_ligne1..7 | `HomeView` |
 | fragment_search | `SearchView` |
