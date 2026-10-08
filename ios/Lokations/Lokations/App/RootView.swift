@@ -21,6 +21,7 @@ struct RootView: View {
                 SplashView()
             } else if session.isLoggedIn {
                 MainTabView()
+                    .preferredColorScheme(.light)
             } else {
                 AuthFlowView()
             }
