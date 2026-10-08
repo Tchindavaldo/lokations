@@ -1,0 +1,106 @@
+name: iOS TestFlight
+
+# Build de l'app iOS native (ios/Lokations) sur un runner macOS GitHub et envoi sur TestFlight.
+# Signature entièrement gérée par Apple (cloud signing) via une clé API App Store Connect :
+# aucun certificat ni profil à exporter depuis un Mac.
+#
+# Secrets requis (Settings > Secrets and variables > Actions) :
+#   ASC_KEY_ID                    ID de la clé API App Store Connect (rôle Admin)
+#   ASC_ISSUER_ID                 Issuer ID affiché au-dessus de la liste des clés
+#   ASC_KEY_P8_B64                contenu du fichier AuthKey_XXXX.p8 encodé en base64
+#   APPLE_TEAM_ID                 Team ID (10 caractères, page Membership du compte Developer)
+#   GOOGLE_SERVICE_INFO_PLIST_B64 (optionnel) GoogleService-Info.plist en base64, sinon mode démo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/ios-native, main]
+    paths: ['ios/**', '.github/workflows/ios-testflight.yml']
+
+concurrency:
+  group: ios-testflight-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testflight:
+    runs-on: macos-15
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: ios/Lokations
+    env:
+      PROJECT: Lokations.xcodeproj
+      SCHEME: Lokations
+      ARCHIVE_PATH: ${{ github.workspace }}/build/Lokations.xcarchive
+      EXPORT_PATH: ${{ github.workspace }}/build/export
+      KEY_PATH: ${{ github.workspace }}/build/AuthKey.p8
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sélection de Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Préparation des secrets
+        env:
+          ASC_KEY_P8_B64: ${{ secrets.ASC_KEY_P8_B64 }}
+          GOOGLE_SERVICE_INFO_PLIST_B64: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_B64 }}
+        run: |
+          mkdir -p "$(dirname "$KEY_PATH")"
+          echo "$ASC_KEY_P8_B64" | base64 --decode > "$KEY_PATH"
+          if [ -n "$GOOGLE_SERVICE_INFO_PLIST_B64" ]; then
+            echo "$GOOGLE_SERVICE_INFO_PLIST_B64" | base64 --decode > Lokations/GoogleService-Info.plist
+            echo "GoogleService-Info.plist injecté."
+          else
+            echo "::warning::GOOGLE_SERVICE_INFO_PLIST_B64 absent : build en mode démo."
+          fi
+
+      - name: Résolution des packages Swift
+        run: xcodebuild -resolvePackageDependencies -project "$PROJECT" -scheme "$SCHEME"
+
+      - name: Archive
+        run: |
+          xcodebuild archive \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$ARCHIVE_PATH" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$KEY_PATH" \
+            -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
+            -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}" \
+            DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
+            CODE_SIGN_STYLE=Automatic \
+            CURRENT_PROJECT_VERSION="${{ github.run_number }}"
+
+      - name: Export et envoi sur TestFlight
+        run: |
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>upload</string>
+            <key>teamID</key><string>${{ secrets.APPLE_TEAM_ID }}</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>uploadSymbols</key><true/>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild -exportArchive \
+            -archivePath "$ARCHIVE_PATH" \
+            -exportPath "$EXPORT_PATH" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$KEY_PATH" \
+            -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
+            -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}"
+
+      - name: Nettoyage de la clé
+        if: always()
+        run: rm -f "$KEY_PATH"

@@ -56,8 +56,7 @@ utilisateur (alerte ou message) ; jamais de `try?` silencieux sur une écriture.
 ## R8 — Secrets & configuration
 
 Rien en dur. `GoogleService-Info.plist` n'est pas versionné : en local on le dépose
-dans `ios/Lokations/Lokations/`, sur Xcode Cloud il est injecté par
-`ci_scripts/ci_post_clone.sh` depuis le secret `GOOGLE_SERVICE_INFO_PLIST_B64`.
+dans `ios/Lokations/Lokations/`, en CI il est injecté depuis le secret `GOOGLE_SERVICE_INFO_PLIST_B64`.
 Sans lui, l'app tourne en mode démo. Constantes Firestore : `AppConfig`.
 
 ## R9 — Emojis : statut seulement (OBLIGATOIRE)
@@ -75,7 +74,7 @@ Les modèles, services et utilitaires sans rendu restent partagés.
 ## R11 — Builds : TOUJOURS demander avant (OBLIGATOIRE)
 
 Aucun build ni test sans accord explicite. Les builds iOS passent par
-**Xcode Cloud** (schéma partagé `Lokations`). Sans build, vérifier par relecture
+**GitHub Actions** (`.github/workflows/ios-testflight.yml`, schéma partagé `Lokations`). Sans build, vérifier par relecture
 et le dire en 1 phrase.
 
 ## R12 — Couleurs & dimensions : design system `DS` uniquement (OBLIGATOIRE)

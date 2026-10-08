@@ -11,7 +11,7 @@ Backend : Firebase Auth (email / mot de passe) + Firestore, via Swift Package Ma
 | Navigation | `TabView` (5 onglets) + `NavigationStack` par onglet |
 | État partagé | `ObservableObject` injectés par `.environmentObject` |
 | Backend | FirebaseCore, FirebaseAuth, FirebaseFirestore (SPM, 12.x) |
-| CI | Xcode Cloud, `ci_scripts/ci_post_clone.sh` |
+| CI | GitHub Actions -> TestFlight (`.github/workflows/ios-testflight.yml`) |
 
 ## Arborescence
 
@@ -72,10 +72,14 @@ ios/
 Sans `GoogleService-Info.plist` dans le bundle, `AppConfig.firebaseEnabled == false` :
 connexion acceptée localement et produits gardés en mémoire.
 
-## Xcode Cloud
+## Build et TestFlight (GitHub Actions)
 
-1. Créer le workflow sur le projet `ios/Lokations/Lokations.xcodeproj`, schéma `Lokations`.
-2. Secret d'environnement `GOOGLE_SERVICE_INFO_PLIST_B64` = `base64 -i GoogleService-Info.plist`
-   (app iOS déclarée dans la console Firebase avec le bundle `com.rauval.lokation`).
-3. Pour l'archive / TestFlight : renseigner l'équipe de signature dans Xcode
-   (icône 1024 déjà fournie dans `AppIcon`).
+Workflow `.github/workflows/ios-testflight.yml` : runner macOS, signature cloud Apple via clé API,
+envoi direct sur TestFlight. Se lance à chaque push sur `ios/**` (branches `feature/ios-native`, `main`)
+ou à la main (onglet Actions > Run workflow). Numéro de build = numéro de run GitHub.
+
+Secrets GitHub : `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8_B64` (clé rôle Admin, .p8 en base64),
+`APPLE_TEAM_ID`, et optionnellement `GOOGLE_SERVICE_INFO_PLIST_B64`
+(app iOS déclarée dans Firebase avec le bundle `com.rauval.lokation`).
+
+`ci_scripts/ci_post_clone.sh` reste prêt si l'app est un jour branchée sur Xcode Cloud.
