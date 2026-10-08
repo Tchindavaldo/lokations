@@ -38,7 +38,7 @@ ios/
         Auth/                    SplashView, AuthFlowView, AuthLoginView, AuthRegisterView, AuthInputField, AuthCommon, AuthWeightedColumn
         Home/                    HomeView, HomeCiteListView, HomeComponents (carrousel, sections, cartes)
         Search/                  SearchView, SearchToolbar, SearchTabStrip, SearchSectionBlock, SearchCiteCards
-        CiteDetail/              CiteDetailView (maquette « Photo immersive »), CiteDetailGlass, CiteDetailInfo, CiteCommentView (feuille Avis), CiteChambreInfo*, CiteStatistique*
+        CiteDetail/              CiteDetailView (frame_layout + barres), CitePhotoView, CiteDetailInfoView, CiteCommentView, CiteChambreInfo*, CiteStatistique*
         Payment/                 PaymentView (+ PaymentComponents), présenté en .sheet
         Boutique/                BoutiqueView + pages Transaction, Statistique, Shop, Pub, BoutiqueProductFormView
         Notifications/           NotificationsView, NotifRow
@@ -54,7 +54,7 @@ ios/
 | HomeActivity + BottomNavigationView | `MainTabView` |
 | HomeFragment + fragment_ligne1..7 | `HomeView` |
 | fragment_search | `SearchView` |
-| FrameLayoutActivity (remplacé par la maquette « B · Photo immersive ») + fragment_comment | `CiteDetailView`, `CiteCommentView` |
+| FrameLayoutActivity + fragment_photo/detail/comment | `CiteDetailView`, `CitePhotoView`, `CiteDetailInfoView`, `CiteCommentView` |
 | fragment_chambre_info1..4 / inflate_chambre_infos | `CiteChambreInfoPager`, `CiteChambreInfoRow`, `CiteChambreInfo2View`, `CiteChambreInfo4View` |
 | fragment_statistique_* / inflate_statistique_chambre | `CiteStatistiquePeriodeView`, `CiteStatistiqueChambreList`, `CiteStatistiqueChambreRow` |
 | fragment_payement | `PaymentView` |
