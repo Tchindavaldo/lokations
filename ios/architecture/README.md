@@ -76,6 +76,6 @@ connexion acceptée localement et produits gardés en mémoire.
 
 1. Créer le workflow sur le projet `ios/Lokations/Lokations.xcodeproj`, schéma `Lokations`.
 2. Secret d'environnement `GOOGLE_SERVICE_INFO_PLIST_B64` = `base64 -i GoogleService-Info.plist`
-   (app iOS déclarée dans la console Firebase avec le bundle `com.tchindavaldo.lokations`).
+   (app iOS déclarée dans la console Firebase avec le bundle `com.rauval.lokations`).
 3. Pour l'archive / TestFlight : renseigner l'équipe de signature dans Xcode
    (icône 1024 déjà fournie dans `AppIcon`).
