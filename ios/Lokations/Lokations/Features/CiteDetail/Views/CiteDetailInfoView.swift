@@ -4,16 +4,32 @@ import SwiftUI
 // marges 5/35/5/56, en-tête « Caracteristique », onglets Details/Avantages/
 // Inconvenient/contact, contenu défilant, barre Reserver / prix / Louer.
 // Apparition en fondu 1000 ms (alpha 0 -> 1). marginTop 38dp = zone sûre iOS.
+// Corrections (R13) : onglets actifs (défilement vers la section, contact -> appel),
+// description de la cité, points blancs invisibles rendus visibles, Reserver/Louer
+// ouvrent le paiement.
 
 struct CiteDetailInfoView: View {
     let info: CiteDetailInfo
+    let onReserve: () -> Void
+    @Environment(\.openURL) private var openURL
     @State private var alpha: Double = 0
+    @State private var tab = 0
 
     var body: some View {
         VStack(spacing: 0) {
-            CiteDetailHeader(chip: "Caracteristique")
-            tabs.padding(.top, 25)
-            ScrollView { content }
+            CiteDetailHeader(info: info, chip: "Caracteristique")
+            ScrollViewReader { proxy in
+                tabs { index in
+                    if index == 3 {
+                        if let url = info.telURL { openURL(url) }
+                        return
+                    }
+                    withAnimation(.easeInOut(duration: 0.25)) { tab = index }
+                    withAnimation { proxy.scrollTo(index, anchor: .top) }
+                }
+                .padding(.top, 25)
+                ScrollView { content }
+            }
             bottomBar
         }
         .padding(.horizontal, 5)
@@ -26,29 +42,27 @@ struct CiteDetailInfoView: View {
 
     // MARK: top_nav_detail (chaîne « spread »)
 
-    private var tabs: some View {
-        HStack(spacing: 0) {
+    private func tabs(_ select: @escaping (Int) -> Void) -> some View {
+        let titles = ["Details", "Avantages", "Inconvenient", "contact"]
+        return HStack(spacing: 0) {
             Spacer(minLength: 0)
-            Text("Details")
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(DS.black)
-                .overlay(alignment: .bottom) {
-                    Rectangle().fill(DS.black).frame(width: 80, height: 2).offset(y: 6)
+            ForEach(titles.indices, id: \.self) { i in
+                Button { select(i) } label: {
+                    Text(titles[i])
+                        .font(.system(size: 16, weight: tab == i ? .bold : .regular))
+                        .foregroundStyle(tab == i ? DS.black : DS.blackA(50))
+                        .overlay(alignment: .bottom) {
+                            if tab == i {
+                                Rectangle().fill(DS.black).frame(width: 80, height: 2).offset(y: 6)
+                            }
+                        }
                 }
-            Spacer(minLength: 0)
-            tab("Avantages")
-            Spacer(minLength: 0)
-            tab("Inconvenient")
-            Spacer(minLength: 0)
-            tab("contact")
-            Spacer(minLength: 0)
+                .buttonStyle(.plain)
+                Spacer(minLength: 0)
+            }
         }
         .padding(.top, 5)
         .padding(.bottom, 6)
-    }
-
-    private func tab(_ text: String) -> some View {
-        Text(text).font(.system(size: 16)).foregroundStyle(DS.blackA(50))
     }
 
     // MARK: ScrollView
@@ -62,11 +76,12 @@ struct CiteDetailInfoView: View {
                     .padding(.leading, 15)
                 Spacer(minLength: 0)
                 HStack(spacing: 5) {
-                    dot(DS.black); dot(DS.white); dot(DS.white)
+                    dot(DS.black); dot(DS.blackA(20)); dot(DS.blackA(20))
                 }
                 .padding(.trailing, 15)
             }
             .padding(.top, 25)
+            .id(0)
 
             HStack(alignment: .top, spacing: 0) {
                 measure("Longueur", "2.5m", centered: true).padding(.trailing, 50)
@@ -81,8 +96,9 @@ struct CiteDetailInfoView: View {
                 .foregroundStyle(DS.black)
                 .padding(.leading, 15)
                 .padding(.top, 35)
+                .id(2)
 
-            Text("elle est equipé d'une douche interne le solest coreler les murs paint de couleur blnche et le haut plafond en tres bonne etat dimensioné de 5m de longueur et 10m de largeur et 3m de hauteur elle est equipé d'une douche interne d'un placard et d'un coin wifi cable canalsat  ")
+            Text(info.cite.summary)
                 .font(.system(size: 13))
                 .foregroundStyle(DS.blackA(50))
                 .padding(.leading, 15)
@@ -90,7 +106,7 @@ struct CiteDetailInfoView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .overlay(alignment: .bottomTrailing) {
                     HStack(spacing: 5) {
-                        dot(DS.white); dot(DS.white); dot(DS.black); dot(DS.white)
+                        dot(DS.blackA(20)); dot(DS.blackA(20)); dot(DS.black); dot(DS.blackA(20))
                     }
                     .padding(.trailing, 15)
                 }
@@ -102,6 +118,7 @@ struct CiteDetailInfoView: View {
             }
             .padding(.leading, 15)
             .padding(.top, 35)
+            .id(1)
 
             VStack(spacing: 35) {
                 inclus("1.", "Internet ")
@@ -146,9 +163,9 @@ struct CiteDetailInfoView: View {
 
     private var bottomBar: some View {
         HStack(spacing: 50) {
-            action("Reserver")
+            Button("Reserver", action: onReserve).buttonStyle(CiteDetailChipStyle())
             action(info.prix)
-            action("Louer")
+            Button("Louer", action: onReserve).buttonStyle(CiteDetailChipStyle())
         }
         .frame(maxWidth: .infinity)
         .frame(height: 50)
@@ -157,5 +174,18 @@ struct CiteDetailInfoView: View {
     private func action(_ text: String) -> some View {
         CiteDetailChip(text: text, size: 14, color: DS.black, bold: true,
                        background: DS.android(0xE6E0E3), radius: 10, h: 7, v: 5)
+    }
+}
+
+/// Bouton au style round_e6e0e3_10 (14sp bold noir, padding 7/5).
+struct CiteDetailChipStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 14, weight: .bold))
+            .foregroundStyle(DS.black)
+            .padding(.horizontal, 7)
+            .padding(.vertical, 5)
+            .background(DS.android(0xE6E0E3), in: RoundedRectangle(cornerRadius: 10))
+            .opacity(configuration.isPressed ? 0.6 : 1)
     }
 }
