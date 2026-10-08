@@ -102,7 +102,7 @@ struct BoutiqueTabStrip: View {
         let label = Text(titles[index].uppercased())
             .font(.system(size: 12, weight: .medium))
         return Button {
-            selection = index
+            withAnimation { selection = index }
         } label: {
             label
                 .foregroundStyle(DS.black)
