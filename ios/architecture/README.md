@@ -37,12 +37,12 @@ ios/
       Features/
         Auth/                    SplashView, AuthFlowView, AuthLoginView, AuthRegisterView, AuthInputField, AuthCommon, AuthWeightedColumn
         Home/                    HomeView, HomeCiteListView, HomeComponents (carrousel, sections, cartes)
-        Search/                  SearchView, SearchCriterion, SearchComponents
+        Search/                  SearchView, SearchToolbar, SearchTabStrip, SearchSectionBlock, SearchCiteCards
         CiteDetail/              CiteDetailView, galerie, infos, chambres, avis, stats
         Payment/                 PaymentSheet
         Boutique/                BoutiqueView, BoutiqueProductsList, ProductEditorSheet, historique, stats
-        Notifications/           NotificationsView
-        Settings/                SettingsView
+        Notifications/           NotificationsView, NotifRow
+        Settings/                SettingsView, SettingsRow
 ```
 
 ## Correspondance Android -> iOS
