@@ -19,11 +19,14 @@ struct AuthBackground: View {
 /// CardView (rayon 25dp) contenant un TextView 50dp noir, texte blanc 15sp bold.
 struct AuthBlackButton: View {
     let title: String
+    var isLoading = false
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Group {
+                if isLoading { ProgressView().tint(DS.white) } else { Text(title) }
+            }
                 .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(DS.white)
                 .padding(10)
@@ -33,6 +36,7 @@ struct AuthBlackButton: View {
                 .clipShape(RoundedRectangle(cornerRadius: 25))
         }
         .buttonStyle(.plain)
+        .disabled(isLoading)
     }
 }
 
@@ -53,7 +57,10 @@ struct AuthOrDivider: View {
 }
 
 /// Logos google / facebook / apple / whatsapp 20x20dp avec leurs marges XML.
+/// Connexion sociale non disponible : chaque logo déclenche `onTap` (toast).
 struct AuthSocialRow: View {
+    let onTap: () -> Void
+
     var body: some View {
         HStack(spacing: 0) {
             logo("logo_google")
@@ -65,6 +72,8 @@ struct AuthSocialRow: View {
 
     private func logo(_ name: String) -> some View {
         Image(name).resizable().scaledToFit().frame(width: 20, height: 20)
+            .contentShape(Rectangle().inset(by: -10))
+            .onTapGesture(perform: onTap)
     }
 }
 

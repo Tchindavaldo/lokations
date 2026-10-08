@@ -6,6 +6,8 @@ final class SessionStore: ObservableObject {
     @Published private(set) var email: String?
     @Published private(set) var isLoading = false
     @Published var errorMessage: String?
+    /// Prénom + nom saisis à l'inscription (activity_register.xml).
+    @Published private(set) var displayName: String?
 
     var isLoggedIn: Bool { email != nil }
 
@@ -24,10 +26,19 @@ final class SessionStore: ObservableObject {
         await run(email: email, password: password) { try await self.service.register(email: $0, password: $1) }
     }
 
+    func register(email: String, password: String, firstName: String, lastName: String) async {
+        await register(email: email, password: password)
+        if isLoggedIn {
+            let name = "\(firstName) \(lastName)".trimmingCharacters(in: .whitespaces)
+            displayName = name.isEmpty ? nil : name
+        }
+    }
+
     func signOut() {
         do {
             try service.signOut()
             email = nil
+            displayName = nil
         } catch {
             errorMessage = error.localizedDescription
         }

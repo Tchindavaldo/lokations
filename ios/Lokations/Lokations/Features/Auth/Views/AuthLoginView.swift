@@ -47,23 +47,24 @@ struct AuthLoginView: View {
                 .padding(.bottom, 5)
             AuthInputField(icon: "ic_baseline_person_outline_24", placeholder: "Email",
                            text: $email, keyboard: .emailAddress)
-            AuthInputField(icon: "ic_baseline_lock_24", placeholder: "..........",
-                           text: $password, textSize: 25, isPassword: true)
+            AuthInputField(icon: "ic_baseline_lock_24", placeholder: "Mot de passe",
+                           text: $password, isPassword: true)
                 .padding(.top, 30)
             HStack(spacing: 0) {
                 Text("se souvenoir la prochaine fois")
-                    .font(.system(size: 11))
+                    .font(.system(size: 12))
                     .foregroundStyle(white50)
                 Spacer(minLength: 0)
                 AuthMaterialSwitch(isOn: $remember)
             }
             .padding(.top, 10)
             VStack(spacing: 0) {
-                AuthBlackButton(title: "connnexion", action: submit)
-                Text("mot de pase oublié? ")
+                AuthBlackButton(title: "connexion", isLoading: session.isLoading, action: submit)
+                Text("mot de passe oublié ? ")
                     .font(.system(size: 15))
                     .foregroundStyle(white50)
                     .padding(.top, 5)
+                    .onTapGesture { toast("Réinitialisation du mot de passe bientôt disponible.") }
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 35)
@@ -82,7 +83,7 @@ struct AuthLoginView: View {
                 .foregroundStyle(white50)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .authWeight(0.3)
-            AuthSocialRow()
+            AuthSocialRow(onTap: { toast("Connexion via réseau social bientôt disponible.") })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .authWeight(0.3)
             HStack(spacing: 0) {
@@ -100,7 +101,24 @@ struct AuthLoginView: View {
         .padding(.bottom, 20)
     }
 
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                        to: nil, from: nil, for: nil)
+    }
+
+    private func toast(_ message: String) {
+        session.errorMessage = message
+    }
+
+    private func isValidEmail(_ value: String) -> Bool {
+        value.range(of: #"^[^@\s]+@[^@\s]+\.[^@\s]+$"#, options: .regularExpression) != nil
+    }
+
     private func submit() {
-        Task { await session.signIn(email: email, password: password) }
+        let mail = email.trimmingCharacters(in: .whitespaces)
+        guard isValidEmail(mail) else { return toast("Veuillez saisir un email valide.") }
+        guard !password.isEmpty else { return toast("Veuillez saisir votre mot de passe.") }
+        hideKeyboard()
+        Task { await session.signIn(email: mail, password: password) }
     }
 }

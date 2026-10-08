@@ -53,19 +53,19 @@ struct AuthRegisterView: View {
             AuthInputField(icon: "ic_baseline_call2_24", placeholder: "Numero Tel",
                            text: $phone, keyboard: .phonePad)
                 .padding(.top, 20)
-            AuthInputField(icon: "ic_baseline_lock_24", placeholder: "Mot de pase",
+            AuthInputField(icon: "ic_baseline_lock_24", placeholder: "Mot de passe",
                            text: $password, isPassword: true)
                 .padding(.top, 20)
             HStack(alignment: .bottom, spacing: 0) {
                 Text("En vous inscrivant vous acceptez nos conditions d'utilisation, notre politique de confidentialité et notre utilisation des cookies.")
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                     .foregroundStyle(white50)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.trailing, 15)
                 AuthCheckBox(isOn: $accepted)
             }
             .padding(.top, 10)
-            AuthBlackButton(title: "inscription", action: submit)
+            AuthBlackButton(title: "inscription", isLoading: session.isLoading, action: submit)
                 .padding(.top, 35)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -82,7 +82,7 @@ struct AuthRegisterView: View {
                 .foregroundStyle(white50)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .authWeight(0.40)
-            AuthSocialRow()
+            AuthSocialRow(onTap: { toast("Connexion via réseau social bientôt disponible.") })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.vertical, 5)
                 .authWeight(0.3, margin: 10)
@@ -101,7 +101,33 @@ struct AuthRegisterView: View {
         .padding(.bottom, 20)
     }
 
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                        to: nil, from: nil, for: nil)
+    }
+
+    private func toast(_ message: String) {
+        session.errorMessage = message
+    }
+
+    private func isValidEmail(_ value: String) -> Bool {
+        value.range(of: #"^[^@\s]+@[^@\s]+\.[^@\s]+$"#, options: .regularExpression) != nil
+    }
+
     private func submit() {
-        Task { await session.register(email: email, password: password) }
+        let mail = email.trimmingCharacters(in: .whitespaces)
+        guard !lastName.trimmingCharacters(in: .whitespaces).isEmpty,
+              !firstName.trimmingCharacters(in: .whitespaces).isEmpty
+        else { return toast("Veuillez saisir votre nom et votre prénom.") }
+        guard isValidEmail(mail) else { return toast("Veuillez saisir un email valide.") }
+        guard password.count >= 6 else {
+            return toast("Le mot de passe doit contenir au moins 6 caractères.")
+        }
+        guard accepted else { return toast("Veuillez accepter les conditions d'utilisation.") }
+        hideKeyboard()
+        Task {
+            await session.register(email: mail, password: password,
+                                   firstName: firstName, lastName: lastName)
+        }
     }
 }

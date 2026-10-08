@@ -57,6 +57,7 @@ struct AuthInputField: View {
             } else {
                 TextField("", text: $text, prompt: prompt)
                     .keyboardType(keyboard)
+                    .textContentType(keyboard == .emailAddress ? .emailAddress : nil)
                     .textInputAutocapitalization(keyboard == .emailAddress ? .never : .sentences)
                     .autocorrectionDisabled()
             }
