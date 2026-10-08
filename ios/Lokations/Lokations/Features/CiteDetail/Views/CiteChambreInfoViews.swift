@@ -37,7 +37,7 @@ struct CiteChambreInfoPager: View {
                     }
             )
         }
-        .frame(height: 230)
+        .frame(height: 270)
         .clipped()
         .padding(.top, 5)
     }
